@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Border-radius 练习</title>
+    <style type="text/css">
+        .container {
+            width: 800px;
+            height: 1000px;
+            margin: 20px auto;
+            border: 1px solid black;
+        }
+        .container>div{
+            display: inline-block;
+            margin: 30px 0 0 30px;
+        }
+        .number-one {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 100%;
+        }
+        .number-two {
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50px 50px 0 0 ;
+        }
+        .number-three {
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50px/25px;  /* x半径/y半径*/
+        }
+        .number-four {
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            border-radius: 100% 0 0 100%/50%;
+        }
+        .hand-lens {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 5px solid black;
+            position: relative;
+        }
+        div:after {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 60px;
+            border-radius: 5px;
+            background-color: black;
+            position: absolute;
+            right: -22px;
+            top: 38px;
+            transform: rotate(-45deg);  /* 需要再练习 */
+        }
+        .text {
+            position: relative;
+        }
+        .text:hover::after {
+            content: attr(data-title);
+            display: inline-block;
+            padding: 10px 14px;
+            border: 1px solid red;
+            border-radius: 5px;
+            position: absolute;
+            top: -50px;
+            left: -30px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #eee;
+            border: 5px solid  red;
+            box-shadow:  0 0 0 5px black, 0 0 0 10px blue;/* 缺点是不能写虚线框 */
+        }
+        .box-other {
+            width: 100px;
+            height: 100px;
+            background-color: #eee;
+            border: 5px solid black;
+            outline: 5px dashed red;  /* outline 只支持两重边框，并且不会贴合border-radius */
+            border-radius: 20px;
+        }
+        .banner {
+            width: 200px;
+            height: 50px;
+            background: linear-gradient(to right, red, yellow, black, green);
+        }
+        .banner-two {
+            width: 200px;
+            height: 50px;
+            background: linear-gradient(red 50%, yellow 50%);
+            background-size: 100% 10px  ;
+        }
+        .banner-three {
+            width: 200px;
+            height: 100px;
+            background: repeating-linear-gradient(-45deg,#31b0d5, #c9302c 25px);
+        }
+        .chrome {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            box-shadow: 0 0 4px #999, 0 0 2px #ddd inset;
+            background: radial-gradient(circle, #4FACF5 0, #2196F3 28%, transparent 28%),
+                        radial-gradient(circle, #fff 33%, transparent 33%),
+                        linear-gradient(-50deg, #FFEB3B 34%, transparent  34%),
+                        linear-gradient(60deg, #4CAF50 33%, transparent  33%),
+                        linear-gradient(180deg, #FF756B 0, #F44336 30%, transparent  30%),
+                        linear-gradient(-120deg, #FfEB3B 40%, transparent  40%),
+                        linear-gradient(-60deg, #FfEB3B 30%, transparent  30%),
+                        linear-gradient(0deg, #4CAF50 45%, transparent  45%),
+                        linear-gradient(60deg, #4CAF50 30%, transparent  30%),
+                        linear-gradient(120deg, #F44336 50%, transparent  50%),
+                        linear-gradient(180deg, #F44336 30%, transparent  30%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="number-one"></div>
+        <div class="number-two"></div>
+        <div class="number-three"></div>
+        <div class="number-four"></div>
+        <div class="hand-lens"></div>
+        <div class="text">
+            <span data-title="hello world">Hover Me!!!</span>
+        </div>
+        <div class="box"></div>
+        <div class="box-other"></div>
+        <div class="banner"></div>
+        <div class="banner-two"></div>
+        <div class="banner-three"></div>
+        <div class="chrome"></div>
+    </div>
+
+</body>
+</html>

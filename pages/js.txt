@@ -1,0 +1,10 @@
+1. isNaN(x)检查其参数是否是 非数字值
+   x若是非数值 返回true  eg: console.log(isNaN("hello"));
+   x若是数值   返回false  eg: console.log(isNaN(123));
+2. parseInt() 解析一个字符串，返回一个整数  parseInt(string  radix)
+              string: 要解析的字符串
+              radix: 基数； 0以10为基数来解析， ox基数为16来解析
+3. split() 把一个字符串 分割成 字符串数组
+            stringObject.split(separator, howmany)
+            separator: 必需 字符串或正则表达式，从这个指定的地方开始分割
+            howmangy：可选 指定返回数组最大长度

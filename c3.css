@@ -1,0 +1,16 @@
+/* nav 背景标签改变颜色 */
+.navbar-inverse{
+    background-color: #0593d3;
+    font-size: 20px;
+    border: 1px solid #0593d3;
+}
+.navbar-default .navbar-brand {
+    color: white;
+    font-weight: bold;
+}
+#example-navbar-collapse a {
+    color: black;
+}
+#example-navbar-collapse a:hover {
+    color: white;
+}

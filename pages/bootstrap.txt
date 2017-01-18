@@ -1,0 +1,12 @@
+bootstrap 响应式 移动端优先
+布局： 优先设计更小的宽度
+<meta name="viewport" conent="width=deviece-width", initial-scale="1.0">
+/* 禁止触屏  可滚动 */
+<meta name="viewport" conent="width=deviece-width", user-scalable="no",maximum-scale="1.0">
+响应式图片： <img src="#" class="img-responsive" alt="响应式图片">
+Normalize.css 是一个很小的css文件，在默认的HTML样式上提供了跨浏览器的的高度一致性。
+normalize.css是一种 css reset的替代方案
+    保护浏览器的默认样式而不是去掉， 修复浏览器自身bug，
+    优化css可用性：用一些小技巧， 解释代码 /* http://jerryzou.com/posts/aboutNormalizeCss/ */
+网格系统：
+响应式导航栏：

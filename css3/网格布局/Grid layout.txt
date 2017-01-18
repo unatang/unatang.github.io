@@ -1,0 +1,23 @@
+1.为什么要用Grid Layout？
+    在web中，可以将内容分割成多个内容块，这些内容块只占据自己的区域，这些区域可想想象成虚拟的网格。
+2.IE10+默认支持CSS Grid Layout模块功能之外，其他的浏览器Chrome、Safari、Opera和Firefox都需要重新设置
+    启用开发中的实验性网络平台功能）
+    在Chrom中开启CSS Grid Layout模块，chrome://flags#enable-experimental-web-platform-features立马定位需要的选项，然后点击“启用”(enable)按钮。
+3. lines: 垂直的线（从左到右) 列起始线：grid-column-start  列终始线：grid-column-end   简写 grid-column: 1/3
+          水平的线（从上到下) 行起始线：grid-row-start     行终始线：grid-row-end      简写 grid-row: 1/3
+          告诉内容的排列摆放从何处开始，何处结束
+   tracks: 轨道  两条平行线之间的空间。 从根本上绝顶内容的位置
+   cells: 单元格  单元格是两条相互垂直的轨道交叉的地方
+   areas: 区域    区域指的是跨越任意数量 cell 的矩形区域。就像行一样，区域也是可以有名字的
+   grid-area:  四条线组成的空间  组成网格区域的网格线顺序是row-start/column-start/row-end/column-end。每个网格线之间也是使用/来分隔。
+               eg:　grid-area: 1/1/2/2;
+4.网格容器： 定义网格display: grid; display: inline-grid
+             创建网格：grid-template-columns，grid-template-rows
+5.网格容器不是块级容器，部分属性会失效。
+    多列布局模块中的所有column-*属性运用在网格容器上将失效
+    float和clear使用在网格项目（网格单元格Grid Cell）上将失效
+    vertical-align使用在网格单元格上将失效
+    ::first-line和::first-letter这样的伪元素不能应用在网格容器上
+6. 合并单元格:  网格线合并
+                span跨列
+                repeat

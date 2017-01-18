@@ -1,0 +1,29 @@
+/* nav 背景 标签更改颜色 */
+.navbar-inverse{
+    background-color: #0593d3;
+    font-size: 20px;
+    border: 1px solid #0593d3;
+}
+.navbar-default .navbar-brand {
+    color: white;
+    font-weight: bold;
+}
+#example-navbar-collapse a {
+    color: black;
+}
+
+#example-navbar-collapse a:hover {
+    color: white;
+}
+.jstitle {
+    font-size: 20px;
+}
+/* footer */
+footer {
+    line-height: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+footer hr {
+    border: 1px solid #eee;
+}

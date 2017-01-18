@@ -1,0 +1,20 @@
+body {
+    font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+}
+/* nav 背景标签改变颜色*/
+.navbar-inverse{
+    background-color: #0593d3;
+    font-size: 20px;
+    border: 1px solid #0593d3;
+}
+.navbar-default .navbar-brand {
+    color: white;
+    font-weight: bold;
+}
+#example-navbar-collapse a {
+    color: white;
+}
+#example-navbar-collapse li:hover {
+    background: #96D4D7;
+    border-radius: 3px;
+}

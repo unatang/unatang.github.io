@@ -1,0 +1,19 @@
+@keyframes IE10 FireFox, Opera支持@keyframes属性
+            Safari, Chrome支持-webkit-keyframes属性
+            IE9及更早IE版本不支持
+animation-duration: 规定动画完成一个周期的时间
+animation-timing: ease(默认)
+animation-delay: 规定动画何时开始 默认0
+animation-interation-count: 动画被播放次数 默认1
+animation-direction: 规定动画是否在下一周期逆向播放 默认是
+animation-play-state: 规定动画是否在运行或暂停
+@keyframes animationname {
+    keyframes-selector {
+        css-styles;
+    }
+}
+animationname:必需 动画名称
+keyframes-selector: 必需 动画持续时间百分比 0%-100%
+css-styles: 必需 一个或多个css属性
+
+opacity: 透明度 1完全透明 0完全不透明

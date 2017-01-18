@@ -1,0 +1,23 @@
+等高布局：左右两列内容不固定 需要保持高度一样
+<div class="container">
+    <div class="left"><p>left</p></div>
+    <div class="right"></p>我是右边 我比左边高</p></div>
+</div>
+.container {
+    width: 800px;
+    margin: 10px  auto;
+    border: 3px solid black;
+    overflow: hidden;
+}
+.left {
+    width: 300px;
+    float: left;
+    padding-bottom: 2000px;
+    margin-bottom: -2000px;
+}
+.right {
+    width: 500px;
+    float: right;
+    padding-bottom: 2000px;
+    margin-bottom: -2000px;
+}
