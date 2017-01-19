@@ -1,0 +1,309 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: #eee;
+}
+.page {
+    width: 980px;
+    height: 1386px;
+    margin: 0 auto;
+    background-color: white;
+
+}
+.container {
+    width: 892px;
+    height: 1386px;
+    margin: 0 auto;
+    position: relative;
+}
+/* header 设置颜色等 ***********/
+header {
+    height:61px;
+}
+header .ife-baidu {
+    float: left;
+    width: 110px;
+    height: 61px;
+    background-color: red;
+}
+header .ife-baidu p {
+    font-size: 12px;
+    color: #ffffff;
+    top: 40px;
+    font-family: 黑体;
+    position: relative;
+    display: inline-block;
+
+}
+header>p {
+    float: right;
+    font-size: 12px;
+    color: red;
+    font-family: 黑体;
+    top: 40px;
+    position: relative;
+
+}
+header hr {
+    width: 892px;
+    border: 2px solid black;
+}
+/* section one  */
+.one {
+    margin: 15px 0;
+}
+.one-aside, .one-img {
+    margin: 20px 0;
+    height: 301px;
+}
+.one-img {
+    width: 641px;
+    float: left;
+}
+.one-aside {   /* 宽度 浮动 */
+    width: 203px;
+    float: right;
+}
+.one-aside hr {
+    border: 2px solid #cc8091;
+}
+.one-aside h2 {
+    font-size: 24px; /*字体，大小， 下划线   padding:４０ｐｘ没有设置 */
+    color: #000000;
+    font-family: 微软雅黑;
+    text-decoration: underline;
+
+}
+.one-aside h2+p {
+    font-size: 12px; /*字体，大小， 下划线 */
+    color: #676767;
+    padding: 5px 0;
+    font-family: 楷体;
+}
+.one-aside .seven {  /* 设置700 */
+    font-size: 116px;
+    font-style: italic;
+    color: #75b86b;
+    font-family: 微软雅黑;
+}
+/* aside-down */
+.aside-down p {
+    float: left;
+    font-family: 微软雅黑;
+    position: absolute;
+}
+.aside-down p:nth-child(1) {  /* 设置数字3.2  */
+    font-size: 55px;
+    color: #cc8091;
+
+}
+.aside-down p:nth-child(2) {
+    font-size: 21px;
+    color: #cc8091;
+
+}
+.aside-down p:nth-child(3) {
+    font-size: 12px;
+    color: #cc8091;
+}
+.one:after {
+    clear: both;
+    content: '';
+    display: block;
+}
+
+/* what why how 的设置*/
+.WWH {
+    width: 641px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.what, .when, .how {
+    float: left;
+    margin-right: 30px;
+}
+.what h2, .when h2, .how h2 {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.what h2 {
+    color: #418c59;
+}
+ .when h2 {
+    color: #d2994f;
+}
+.how h2 {
+    color: #cc7680;
+}
+.what p, .when p, .how p {
+    font-size: 12px;
+    color: #231815;
+    font-family: 微软雅黑;
+    padding: 16px 0;
+    opacity: 0.7;
+}
+.how p {
+    line-height: 2em;
+}
+.how .w-3 p {
+    padding: 5px 0;
+}
+.how .w-3 p span {
+    font-size: 12px;
+    color: #cd4a4b;
+    font-family: 微软雅黑;
+    font-style: italic;
+    padding: 16px 0;
+    opacity: 0.7;
+}
+.what {
+    width: 220px;
+}
+.when {
+    width: 200px;
+}
+.how {
+    width: 130px;
+}
+/* two-art1-up设置*/
+.two {
+    margin: 10px 0;
+    overflow: hidden;
+}
+.two-art1 {
+    width: 415px;
+    float: left;
+}
+.two-art1-up {
+    width: 414px;
+}
+.two-art1-up .the{
+    font-size: 72px;
+    font-family: 黑体;
+    color: #f5e327;
+    font-weight: bold;
+    font-style: italic;
+}
+.two-art1-up .the+span{
+    font-family: 黑体;
+    color: #11456b;
+    font-size: 42px;
+    padding: 0;
+}
+.two-art1-up p{
+    font-family: 黑体;
+    color: #11456b;
+    font-size: 42px;
+    margin-top: -13px;
+}
+.two-art1-up p +span {
+    font-size: 33px;
+    font-family: 黑体;
+    color: #11456b;
+    font-weight: bold;
+}
+.two-art1-up hr {
+    width: 415px;
+    margin: 15px 0;
+    border: 2px solid #11456b;
+}
+/* .two-art1-down */
+.two-art1-down {
+    width: 415px;
+    margin: 20px 0;
+}
+.two-art1-down span{
+    float: left;
+    font-size: 70px;
+    font-family: 微软雅黑;
+    color: #f5e327;
+    padding: 20px 10px 30px 0;
+}
+.two-art1-down p {   /* 设置段落字体 颜色 大小 */
+    font-size: 12px;
+    font-family: 宋体;
+    color: #767777;
+    line-height: 16px;
+}
+.two-art1-down p:nth-child(2), .two-art1-down p:nth-child(3) {  /* 首行缩进两格 */
+    text-indent: 2em;
+}
+.two-art1-down p img {
+    float: right;
+    padding: 15px 0 10px 20px;
+}
+
+/*two-art2*/
+.two-art2 {
+    width: 459px;
+    float: right;
+
+}
+.two-art2-up {
+    height: 275px;
+
+
+}
+/* two-art2 */
+.two-art2 {
+    margin: 20px 0;
+}
+
+/* two-art2-down */
+.two-art2-down {
+    width: 459px;
+    height: 318px;
+    margin: 15px 0;
+    background-color: #eee;
+}
+.two-art2-down-lineheight {
+    padding: 20px 10px 20px 3.5em;
+
+}
+.two-art2-down-lineheight p {
+    font-size: 16px;
+    font-family: 宋体;
+    color: #5a5b5b;
+    text-align: left;
+    padding: 10px 0;
+}
+.two-art2-down-lineheight p span {
+    font-size: 12px;
+    font-style: italic;
+    text-align: right;
+}
+/* art2-down-left */
+.art2-down-left {
+    float: left;
+    width: 260px;
+    height: 160px;
+    background-color: blueviolet;
+}
+/*art2-down-right*/
+.art2-down-right {
+    width: 179px;
+    float: right;
+    background-color: red;
+}
+
+/* footer */
+footer {
+    position: absolute;
+    line-height: 60px;
+    text-align: right;
+    bottom: 0px;
+    width: 892px;
+}
+footer hr {
+    border: 1px solid #938e8c;
+}
+footer p {
+    position: relative;
+    bottom: 15px;
+    font-size: 12px;
+    color: #d45d5c;
+    font-family: 黑体;
+}

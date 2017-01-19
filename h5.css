@@ -1,20 +1,81 @@
 body {
     font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+    background-color: #eee;
 }
-/* nav 背景标签改变颜色*/
-.navbar-inverse{
-    background-color: #0593d3;
-    font-size: 20px;
-    border: 1px solid #0593d3;
+header {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
-.navbar-default .navbar-brand {
-    color: white;
-    font-weight: bold;
+
+header h1{
+    margin: 10px 20px;
+    font-size: 3.4rem;
+    font-weight: 700;
+    color: #555;
+    text-align: center;
 }
-#example-navbar-collapse a {
-    color: white;
+header h2 {
+    margin: 20px 0 30px 0;
+    font-size: 3.4rem;
+    font-weight: 700;
+    color: #888;
+    text-align: center;
 }
-#example-navbar-collapse li:hover {
-    background: #96D4D7;
+.main {
+
+}
+/* ul */
+.dict {
+    font-size: .75rem;
+    color: #bbb;
+    padding-left: 0;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+.dict li {
+    list-style: none;
+    display: inline;
+}
+.dict .tag {
+    display: inline-block;
+    padding: 2px 6px;
+    margin: 4px;
+    color: #fff;
+    background-color: #bbb;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
     border-radius: 3px;
+
+}
+.dict .tag:hover {
+    background-color: #777777;
+}
+.dict .tag span {
+    font-size: .625rem;
+    vertical-align: super;
+}
+/* articale */
+article {
+    padding: 30px 50px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    box-shadow: 0 0 0 0, 0 6px 12px rgba(34,34,34,0.1);
+}
+article li {
+
+}
+article p {
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+/* footer */
+footer {
+    line-height: 50px;
+    text-align: center;
+    color: #555;
 }

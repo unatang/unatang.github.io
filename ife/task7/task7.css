@@ -1,0 +1,325 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    padding-top: 10px;
+    width: 100%;
+}
+/* header 头部 */
+header {
+    height: 40px;
+    background-color: #ffffff;
+}
+header .new-world {
+    float: left;
+    margin-left: 64px;
+    font-family: 黑体;
+    font-size: 21px;
+    color: black;
+}
+header .new-world img{
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 13px;
+}
+header ul {
+    float: right;
+    font-size: 13px;
+}
+header ul li {
+    float: left;
+    width: 90px;
+    list-style: none;
+}
+header ul li a {
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+header ul li a:hover {
+    color: red;
+}
+header ul .enter a {
+    color: red;
+}
+/* top-new-life */
+.top-new-life {
+
+}
+.op-new-life{
+
+}
+.top-left-words {
+    height: 690px;
+    background-image: url(images/3.jpg);
+    background-repeat: no-repeat;
+    padding-top: 223px;
+
+}
+.top-left-words h1, .top-left-words p, .top-left-words input {
+    margin-left: 180px;
+    color: white;
+}
+.top-left-words h1 {
+    font-weight: bold;
+    display: inline-block;
+    font-size: 50px;
+    font-family: 微软雅黑;
+    margin: 0 0 30px 0;
+    margin-left: 180px;
+}
+.top-left-words p {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+.top-left-words input {
+    padding: 20px 90px;
+    background-color: #cd4a4b;
+    border: none;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 宋体;
+    letter-spacing: 3px;
+    color: white;
+    margin-top: 50px;
+}
+/* one */
+.one {
+
+}
+.one-life {
+    width: 390px;
+}
+.one-life span {
+    background-image: url(images/4.png);
+}
+/* section two */
+.two {
+    width: 100%;
+    background-color: #eee;
+
+}
+/* new-world-book */
+.two-world-book {
+    height: 320px;
+    position: relative;
+}
+.two-world-book div {
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    text-align: center;
+}
+.two-world-book div h1 {
+    font-size: 40px;
+    font-family: 微软雅黑;
+    color: #938e8c;
+    margin: 30px 0;
+}
+/* two-world-city */
+.two-world-city {
+    position: relative;
+    font-family: 微软雅黑;
+}
+.two-world-city img {
+    width: 100%;
+    height: auto;
+}
+.two-world-city-des {
+    height: 290px;
+    padding-top: 50px;
+    background-image: url(images/map.jpg);
+    background-size: cover;
+    font-family: 微软雅黑;
+    color: white;
+    background-repeat: no-repeat;
+}
+.two-world-city-des h2 {  /* 设置城市活动 字体 颜色 等 */
+    color: white;
+    padding-bottom: 10px;
+    top: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+.two-world-city-des hr {
+    width: 30px;
+    margin: 0 auto;
+    border: 2px solid white;
+    margin-bottom: 20px;
+}
+.two-world-city-des p {
+    color: white;
+    text-align: center;
+    margin: 10px 0 30px 0;
+}
+.two-world-city-des .city {
+    width: 1030px;
+    margin: 0 auto;
+    position: relative;
+}
+.city-china, .city-province, .city-items, .city-search {
+    float: left;
+}
+.city-china input, .city-province input, .city-items input {
+    width: 223px;
+    height: 34px;
+    padding-left: 12px;
+    margin-right: 22px;
+    background-image: url(images/down.jpg);
+    background-repeat: no-repeat;
+    background-position: 210px center;
+}
+.city-search input {
+    width: 223px;
+    height: 34px;
+    padding-left: 12px;
+    margin-right: 22px;
+}
+.city-province ul {
+    position: absolute;
+    list-style: none;
+    left: 262px;
+    background-color: #e3e3e4;
+    font-size: 12px;
+    color: black;
+    border: 1px solid #be4e48;
+}
+.city-province li {
+    width: 203px;
+    height: 29px;
+    padding-left: 32px;
+    line-height: 36px;
+
+}
+.city-province li:hover {
+    background-color: #be4e48;
+    color: white;
+    background-image: url(images/down.jpg);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+.city-search input{
+    background-color: #be4e48;
+    color: white;
+    border: none;
+}
+/* two-world-photos 照片墙 */
+.two-world-photos {
+    width: 100%;
+    height: 500px;
+    font-family: 宋体;
+}
+.two-world-photos .two-world-layout {
+    text-align: center;   /* center之后 inline-block  居然居中了？？？  */
+    height: 505px;
+    margin: 0 auto;
+    padding-top: 90px;
+}
+figure{
+    display: inline-block;
+    width: 217px;
+    height: 391px;
+    margin-right: 38px;
+    position: relative;
+    margin-bottom: 12px;
+}
+figure img {
+    padding: 14px 8px;
+    background-color: white;
+    border: 1px solid #7f7777;
+}
+figcaption h2 {  /* photo h2 p 字体设置*/
+    font-size: 17px;
+    padding: 5px;
+}
+.photo-text h2{
+    font-weight: bold;
+    letter-spacing: 12px;
+    font-size: 20px;
+
+}
+.photo-text h2+p {
+    padding-bottom: 5px;
+}
+figcaption p {
+    font-size: 12px;
+    color: #7f7777;
+}
+/* two-world-time */
+.two-world-time {
+    width: 100%;
+    height: 575px;
+    margin: 100px 0;
+}
+.two-world-time-img,  .two-world-time-des {
+    height: 443px;
+}
+.two-world-time-img {
+    float: left;
+    background-image: url(images/img02.jpg);
+    background-size: cover;
+    height: 443px;
+    width: 66.6%;
+    padding-top: 132px;
+}
+.two-world-time-des {
+    float: right;
+                     /* 添加图片 */
+    height: 443px;
+    width: 33.3%;
+    margin-top: 100px;
+    background-color: white;
+}
+/* two-show-bottom */
+.two-show-bottom {   /*  根上一个div 有距离 只能margin??  */
+    width: 100%;
+    height: 520px;
+    margin-top: -100px;
+}
+
+.two-show-bottom div:first-child {
+    width: 33.3%;
+    height: 348px;
+    float: left;
+    padding-top: 172px;
+    background-color: #e74f4d;
+}
+.two-show-bottom div:nth-child(2) {
+    width: 33.3%;
+    height: 348px;
+    float: left;
+    padding-top: 172px;
+    background-color: white;
+}
+.two-show-bottom div:nth-child(3) {
+    width: 33.3%;
+    height: 348px;
+    float: right;
+    padding-top: 172px;
+    background-color: blueviolet;
+}
+/* two-volunteer */
+.two-volunteer {
+    width: 100%;
+    height: 80px;
+    padding: 100px 0;
+    border: 2px solid red;
+    text-align: center;
+    background-color: white;
+}
+.two-volunteer 
+.two-volunteer h2{
+    font-size: 21px;
+    font-family: 微软雅黑;
+    margin-bottom: 10px;
+}
+.two-volunteer hr {
+    width: 28px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    border: 2px solid red;
+}
+
