@@ -18,12 +18,28 @@
 .jstitle {
     font-size: 20px;
 }
-/* footer */
+/* carousel-caption 轮播下面的字 */
+.carousel-caption h3, p{
+    font-weight: bold;
+}
+/* footer p的选择器重新写*/
 footer {
-    line-height: 50px;
+    line-height: 20px;
     text-align: center;
     font-weight: bold;
 }
+footer div {
+    padding-bottom: 30px;
+}
 footer hr {
     border: 1px solid #eee;
+}
+footer p{
+    color: #777;
+    margin-bottom: 0;
+}
+footer p:last-child {
+    color: #0088cc;
+    margin-top: 10px;
+    word-spacing: 10px;
 }
