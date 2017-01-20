@@ -1,0 +1,8 @@
+<h1>scroll</h1>
+<p>触发scroll事件：$(selector).scroll()</p>
+<p>将函数绑定到 scroll 事件：$(selector).scroll(function)</p>
+<p>当用户滚动指定元素时，会发生scroll事件</p>
+<p>适用于所有可滚动的元素和window对象（浏览器窗口)</p>
+<h1>scrollTop</h1>
+<p>scrollTop(): 获取或设置匹配元素的滚动条的垂直高度位置</p>
+<p>语法：$(element).scrollTop()/$(element).scrollTop(val)</p>

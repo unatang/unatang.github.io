@@ -19,7 +19,8 @@ $(function () {
         //动画效果，平滑滚动回到顶部
         //$(document).animate({ scrollTop: 0 });
         //不需要动画则直接
+        //这边为什么用DOCUCMENT??????????????????????
         $(document).scrollTop(0)
     })
-    
+
     });
