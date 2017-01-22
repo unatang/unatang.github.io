@@ -1,3 +1,5 @@
+.container {
+}
 /* nav 背景 标签更改颜色 */
 .navbar-inverse{
     background-color: #0593d3;
@@ -21,6 +23,18 @@
 /* carousel-caption 轮播下面的字 */
 .carousel-caption h3, p{
     font-weight: bold;
+}
+/*sidebar 页面左边导航
+ ----------------------------------*/
+#sidebar {
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    font-size: 15px;
+}
+#sidebar .list-group a:hover {
+    color: white;
+    background-color: #0593d3;
+    opacity: 0.7;
 }
 /* gotoTop 回到顶部按钮 */
 #gotoTop {

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout1</title>
+    <style src="text/css">
+        header,
+        footer {
+            background-color: #eee;
+            text-align: center;
+            line-height: 50px;
+        }
+        .layout_main {
+            background: #4DBCB0;
+            line-height: 50px;
+
+        }
+        .layout_aside {
+            background: #daf1ef;
+            line-height: 50px;
+        }
+        .layout_aside, .layout_main {
+            text-align: center;
+            margin:10px 0;
+        }
+        .layout_main {
+            margin-left: 210px;
+        }
+        .layout_aside {
+            width: 200px;
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+    <header>顶部</header>
+    <div class="layout_aside">侧边栏宽度固定</div>
+    <div class="layout_main">主内容栏宽度自适应</div>
+    <footer class="clear">底部</footer>
+</body>
+</html>

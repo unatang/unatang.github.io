@@ -1,325 +1,476 @@
-* {
+.container{
+    width: 100%;
+    min-width: 1280px;
+    font-family: 'Microsoft YaHei';
+}
+header{
+    width: 100%;
+    height: 60px;
+    font-size: 0;
+}
+header .banner-left{
+    height: 60px;
+    width: 10%;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 60px;
+    text-align: center;
+
+    position: relative;
+    left: 7%;
+    background: url(images/1.jpg) no-repeat left;
+    background-size: 16% 50%;
+}
+header .banner-left h1{
+    color: #4E3A4F;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+    cursor: default;
+}
+header nav{
+    height: 60px;
+    width: 30%;
+    display: inline-block;
+    vertical-align: middle;
+
+    position: relative;
+    left: 40%;
+}
+header nav ul{
+    height: 60px;
+    width: 100%;
+    line-height: 60px;
+    list-style: none;
+    box-sizing: border-box;
+    margin: 0;
     padding: 0;
+}
+header nav ul li{
+    display: inline-block;
+    width: 20%;
+    font-size: 14px;
+    text-align: center;
+    box-sizing: border-box;
+    color: #534141;
+    cursor: pointer;
+
+    -webkit-transition:color 0.4s ease-in-out;
+    -moz-transition:color 0.4s ease-in-out;
+    transition:color 0.4s ease-in-out;
+}
+header nav ul li:hover{
+    color: #F04C57;
+}
+header nav ul .move{
+    position: absolute;
+    border-top: 4px solid #E53C3C;
+    left: 0;
+    top: 55px;
+    -webkit-transition: left 0.4s ease-in-out;
+    -moz-transition: left 0.4s ease-in-out;
+    transition: left 0.4s ease-in-out;
+}
+header nav ul li:nth-child(1):hover~.move{
+    left: 0;
+}
+header nav ul li:nth-child(2):hover~.move{
+    left: 20%;
+}
+header nav ul li:nth-child(3):hover~.move{
+    left: 40%;
+}
+header nav ul li:nth-child(4):hover~.move{
+    left: 60%;
+}
+header nav ul li:nth-child(5):hover~.move{
+    left: 80%;
+}
+header .banner-right{
+    font-size: 14px;
+    color: #E53C3C;
+    height: 60px;
+    width: 7%;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 60px;
+    text-align: center;
+    cursor: pointer;
+
+    position: relative;
+    left: 50%;
+
+    background: url(images/2.png) no-repeat left;
+    background-size: 15px 18px;
+}
+header .banner-right .move{
+    width: 0;
+    border-top: 2px solid #E53C3C;
+    position: absolute;
+    top: 45px;
+    left: 25%;
+
+    -webkit-transition:width 0.4s ease-in-out;
+    -moz-transition:width 0.4s ease-in-out;
+    transition:width 0.4s ease-in-out;
+}
+header .banner-right:hover .move{
+    width: 50px;
+}
+#section-1{
+    width: 100%;
+    height: 650px;
+    margin-top: -2px;
+    background-image: url(images/3.jpg);
+    background-size: 100% auto;
+}
+/* section1
+------------------------------*/
+#section-1 .mes {
+    position: absolute;
+    top: 270px;
+    left: 120px;
+}
+/* section2
+------------------------------*/
+#section-2{
+    width: 100%;
+    height: 240px;
+    font-size: 0;
+}
+#section-2 .cell{
+    width: 25%;
+    display: inline-block;
+    position: relative;
+    top: 0;
+}
+#section-2 .cell .img{
+    width: 100%;
+    height: 130px;
+    display: inline-block;
+    line-height: 130px;
+    text-align: center;
+}
+#section-2 .cell .img img{
+    position: relative;
+    top: 30px;
+}
+#section-2 .cell .mes{
+    width: 100%;
+    height: 50px;
+    font-size: 13px;
+    color: #534141;
+    text-align: center;
+    box-sizing: border-box;
+    border-right: 2px solid #534141;
+
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+#section-2 .cell:hover .mes{
+    color: #BE4F48;
+}
+#section-2 .cell:last-child .mes{
+    border:none;
+}
+/* section3
+------------------------------*/
+#section-3{
+    width: 100%;
+    height: 400px;
+    background: #eee;
+    text-align: center;
+}
+#section-3 .img {
+    position: relative;
+    top: 80px;
+
+}
+#section-3 .mes {
+    position: relative;
+    color: #777;
+    top: 90px;
+}
+#section-3 .mes p {
+    font-size: 40px;
+}
+/* section4
+------------------------------*/
+#section-4 {
+    width: 100%;
+    height: 300px;
+    padding-top: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    background-size: cover;
+    background-image: url(images/map.jpg);
+}
+#section-4 .mes p{
+    color: white;
     margin: 0;
 }
-
-.container {
-    padding-top: 10px;
-    width: 100%;
+#section-4 .mes p:first-child{
+    font-size: 22px;
 }
-/* header 头部 */
-header {
-    height: 40px;
-    background-color: #ffffff;
-}
-header .new-world {
-    float: left;
-    margin-left: 64px;
-    font-family: 黑体;
-    font-size: 21px;
-    color: black;
-}
-header .new-world img{
-    height: 40px;
-    vertical-align: middle;
-    margin-right: 13px;
-}
-header ul {
-    float: right;
+#section-4 .mes p:last-child {
     font-size: 13px;
 }
-header ul li {
-    float: left;
-    width: 90px;
-    list-style: none;
-}
-header ul li a {
-    display: block;
-    text-decoration: none;
-    color: black;
-}
-header ul li a:hover {
-    color: red;
-}
-header ul .enter a {
-    color: red;
-}
-/* top-new-life */
-.top-new-life {
-
-}
-.op-new-life{
-
-}
-.top-left-words {
-    height: 690px;
-    background-image: url(images/3.jpg);
-    background-repeat: no-repeat;
-    padding-top: 223px;
-
-}
-.top-left-words h1, .top-left-words p, .top-left-words input {
-    margin-left: 180px;
-    color: white;
-}
-.top-left-words h1 {
-    font-weight: bold;
-    display: inline-block;
-    font-size: 50px;
-    font-family: 微软雅黑;
-    margin: 0 0 30px 0;
-    margin-left: 180px;
-}
-.top-left-words p {
-    font-size: 20px;
-    font-weight: bold;
-    padding-bottom: 5px;
-}
-.top-left-words input {
-    padding: 20px 90px;
-    background-color: #cd4a4b;
-    border: none;
-    font-size: 22px;
-    font-weight: bold;
-    font-family: 宋体;
-    letter-spacing: 3px;
-    color: white;
-    margin-top: 50px;
-}
-/* one */
-.one {
-
-}
-.one-life {
-    width: 390px;
-}
-.one-life span {
-    background-image: url(images/4.png);
-}
-/* section two */
-.two {
-    width: 100%;
-    background-color: #eee;
-
-}
-/* new-world-book */
-.two-world-book {
-    height: 320px;
-    position: relative;
-}
-.two-world-book div {
-    position: absolute;
-    bottom: 0;
-    left: 25%;
-    text-align: center;
-}
-.two-world-book div h1 {
-    font-size: 40px;
-    font-family: 微软雅黑;
-    color: #938e8c;
-    margin: 30px 0;
-}
-/* two-world-city */
-.two-world-city {
-    position: relative;
-    font-family: 微软雅黑;
-}
-.two-world-city img {
-    width: 100%;
-    height: auto;
-}
-.two-world-city-des {
-    height: 290px;
-    padding-top: 50px;
-    background-image: url(images/map.jpg);
-    background-size: cover;
-    font-family: 微软雅黑;
-    color: white;
-    background-repeat: no-repeat;
-}
-.two-world-city-des h2 {  /* 设置城市活动 字体 颜色 等 */
-    color: white;
-    padding-bottom: 10px;
-    top: 50px;
-    text-align: center;
-    font-weight: bold;
-}
-.two-world-city-des hr {
+#section-4 .mes span {
+    color: #fff;
     width: 30px;
-    margin: 0 auto;
-    border: 2px solid white;
-    margin-bottom: 20px;
+    height: 10px;
+    display: inline-block;
+    border-top: 2px solid #fff;
+    margin-top: 10px;
 }
-.two-world-city-des p {
-    color: white;
-    text-align: center;
-    margin: 10px 0 30px 0;
-}
-.two-world-city-des .city {
-    width: 1030px;
-    margin: 0 auto;
-    position: relative;
-}
-.city-china, .city-province, .city-items, .city-search {
+#section-4 input[type="text"],#section-4 input[type="submit"]{
     float: left;
+    height: 26px;
 }
-.city-china input, .city-province input, .city-items input {
-    width: 223px;
-    height: 34px;
-    padding-left: 12px;
-    margin-right: 22px;
-    background-image: url(images/down.jpg);
-    background-repeat: no-repeat;
-    background-position: 210px center;
-}
-.city-search input {
-    width: 223px;
-    height: 34px;
-    padding-left: 12px;
-    margin-right: 22px;
-}
-.city-province ul {
-    position: absolute;
-    list-style: none;
-    left: 262px;
-    background-color: #e3e3e4;
-    font-size: 12px;
-    color: black;
-    border: 1px solid #be4e48;
-}
-.city-province li {
-    width: 203px;
-    height: 29px;
-    padding-left: 32px;
-    line-height: 36px;
-
-}
-.city-province li:hover {
-    background-color: #be4e48;
-    color: white;
-    background-image: url(images/down.jpg);
-    background-repeat: no-repeat;
-    background-position: 10px center;
-}
-.city-search input{
-    background-color: #be4e48;
-    color: white;
-    border: none;
-}
-/* two-world-photos 照片墙 */
-.two-world-photos {
+/* section-5
+------------------------------*/
+#section-5 {
     width: 100%;
     height: 500px;
-    font-family: 宋体;
+    padding-top: 10px;
+    background-color: #eee;
 }
-.two-world-photos .two-world-layout {
-    text-align: center;   /* center之后 inline-block  居然居中了？？？  */
-    height: 505px;
-    margin: 0 auto;
-    padding-top: 90px;
-}
-figure{
+#section-5 figure {
     display: inline-block;
-    width: 217px;
-    height: 391px;
-    margin-right: 38px;
-    position: relative;
-    margin-bottom: 12px;
 }
-figure img {
+#section-5 figure img {
     padding: 14px 8px;
     background-color: white;
-    border: 1px solid #7f7777;
+    border: 1px solid white;
 }
-figcaption h2 {  /* photo h2 p 字体设置*/
-    font-size: 17px;
-    padding: 5px;
-}
-.photo-text h2{
-    font-weight: bold;
-    letter-spacing: 12px;
-    font-size: 20px;
-
-}
-.photo-text h2+p {
-    padding-bottom: 5px;
-}
-figcaption p {
-    font-size: 12px;
-    color: #7f7777;
-}
-/* two-world-time */
-.two-world-time {
-    width: 100%;
-    height: 575px;
-    margin: 100px 0;
-}
-.two-world-time-img,  .two-world-time-des {
-    height: 443px;
-}
-.two-world-time-img {
-    float: left;
-    background-image: url(images/img02.jpg);
-    background-size: cover;
-    height: 443px;
-    width: 66.6%;
-    padding-top: 132px;
-}
-.two-world-time-des {
-    float: right;
-                     /* 添加图片 */
-    height: 443px;
-    width: 33.3%;
-    margin-top: 100px;
-    background-color: white;
-}
-/* two-show-bottom */
-.two-show-bottom {   /*  根上一个div 有距离 只能margin??  */
-    width: 100%;
-    height: 520px;
-    margin-top: -100px;
-}
-
-.two-show-bottom div:first-child {
-    width: 33.3%;
-    height: 348px;
-    float: left;
-    padding-top: 172px;
-    background-color: #e74f4d;
-}
-.two-show-bottom div:nth-child(2) {
-    width: 33.3%;
-    height: 348px;
-    float: left;
-    padding-top: 172px;
-    background-color: white;
-}
-.two-show-bottom div:nth-child(3) {
-    width: 33.3%;
-    height: 348px;
-    float: right;
-    padding-top: 172px;
-    background-color: blueviolet;
-}
-/* two-volunteer */
-.two-volunteer {
-    width: 100%;
-    height: 80px;
-    padding: 100px 0;
-    border: 2px solid red;
+#section-5 figcaption {
+    font-family: Microsoft YaHei;
     text-align: center;
-    background-color: white;
 }
-.two-volunteer 
-.two-volunteer h2{
-    font-size: 21px;
-    font-family: 微软雅黑;
-    margin-bottom: 10px;
+#section-5 figcaption h2 {
+    font-size: 20px;
 }
-.two-volunteer hr {
-    width: 28px;
+#section-5 .photo-text h2 {
+    letter-spacing: 20px;  /* 增加字符间距离一段文字，一个单词 ，内部之间距离*/
+}
+#section-5 figcaption p {
+    font-size: 12px;
+    color: #938e8c;
+}
+/* section-6
+------------------------------*/
+#section-6{
+    width: 100%;
+    height: 560px;
+}
+#section-6 .left{
+    width: 68%;
+    height: 560px;
+    float: left;
+    position: relative;
+    background: url(images/img02.jpg) no-repeat;
+    background-size: cover;
+}
+#section-6 .left .mes{
+    color: #fff;
+    text-align: center;
+    width: 500px;
+    height: 300px;
     margin: 0 auto;
-    margin-bottom: 15px;
-    border: 2px solid red;
+    position: relative;
+    top: 130px;
 }
+#section-6 .left .mes p{
+    font-size: 30px;
+    margin: 0;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+#section-6 .left .mes p:nth-child(1){
+    font-size: 50px;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 0px;
+}
+#section-6 .left .mes p:nth-child(2){
+    font-size: 150px;
+    height: 150px;
+    line-height: 150px;
+}
+#section-6 .left::after{
+    content: '';
+    position: absolute;
+    border-width: 30px;
+    border-style: solid;
+    border-color: transparent #fff transparent transparent;
+    top: 250px;
+    left: 100%;
+    margin-left: -60px;
+}
+#section-6 .right{
+    height: 560px;
+    margin-left: 68%;
+    text-align: center;
+}
+#section-6 .right .wrapper{
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+    top: 130px;
+}
+#section-6 .right .wrapper .mes{
+    display: none;
+}
+#section-6 .right .wrapper .mes-1{
+    display: block;
+}
+#section-6 .right .wrapper .mes p{
+    margin: 0;
+}
+#section-6 .right .wrapper .mes p:first-child{
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+#section-6 .right .wrapper .mes p:first-child>span{
+    color: #BE4F48;
+}
+#section-6 .right .wrapper .mes p:last-child{
+    text-align: left;
+    line-height: 25px;
+    font-size: 14px;
+    color: #B3AFAC;
+    margin-bottom: 60px;
 
+    -webkit-transition: color 0.4s ease-in-out;
+    -moz-transition: color 0.4s ease-in-out;
+    transition: color 0.4s ease-in-out;
+}
+#section-6 .right .wrapper .mes p:last-child:hover{
+    color: #33363F;
+}
+#section-6 .right .wrapper .button{
+    width: 100px;
+    height: 35px;
+    font-size: 13px;
+    display: inline-block;
+    line-height: 35px;
+    border: 1px solid #BE4F48;
+    color: #BE4F48;
+    background-color: #fff;
+    cursor: pointer;
+
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+#section-6 .right .wrapper .button:hover{
+    color: #fff;
+    border-radius: 3px;
+    background-color: #BE4F48;
+}
+#section-6 .right .wrapper input[type="radio"]{
+    width: 10px;
+    height: 10px;
+    position: relative;
+    top: 320px;
+    z-index: 10;
+    opacity: 0;
+    cursor: pointer;
+}
+#section-6 .right .wrapper .list{
+    height: 10px;
+    width: 10px;
+    border: 1px solid #6C5C5C;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    top: 300px;
+    z-index: 1;
+}
+#section-6 .right .wrapper .list:first-of-type{
+    background-color: #6C5C5C;
+}
+#section-6 .right .wrapper input[type="radio"]:checked~.list{
+    background-color: #fff;
+}
+#section-6 .right .wrapper input[type="radio"]:checked~.mes{
+    display: none;
+}
+#section-6 .right .wrapper input[type="radio"]:nth-of-type(1):checked~.list:nth-of-type(1){
+    background-color: #6C5C5C;
+}
+#section-6 .right .wrapper input[type="radio"]:nth-of-type(1):checked~.mes-1{
+    display: block;
+}
+#section-6 .right .wrapper input[type="radio"]:nth-of-type(2):checked~.list:nth-of-type(2){
+    background-color: #6C5C5C;
+}
+#section-6 .right .wrapper input[type="radio"]:nth-of-type(2):checked~.mes-2{
+    display: block;
+}
+#section-6 .right .wrapper input[type="radio"]:nth-of-type(3):checked~.list:nth-of-type(3){
+    background-color: #6C5C5C;
+}
+#section-6 .right .wrapper input[type="radio"]:nth-of-type(3):checked~.mes-3{
+    display: block;
+}
+/*section-7
+---------------------------------------*/
+#section-7 {
+    width: 100%;
+
+}
+#section-7 .wrapper {
+    width: 68%;
+    height: 520px;
+    float: left;
+}
+#section-7 .wrapper .cell {
+    width: 50%;
+    height: 520px;
+}
+#section-7 .wrapper .cell:first-child {
+    float: left;
+    background-color: #E84E4C;
+}
+#section-7 .wrapper .cell:last-child {
+    float: left;
+}
+#section-7 .img {
+    width: 32%;
+    height: 520px;
+    float: right;
+    background-image: url(images/pic08.jpg);
+}
+/* section-8
+-----------------------------*/
+#section-8 {
+    width: 100%;
+    height: 800px;
+    text-align: center;
+}
+#section-8 .top {
+    width: 100%;
+    height: 300px;
+
+}
+#section-8 .left {
+    width: 30%;
+    height: 400px;
+    display: inline-block;
+    font-size: 20px;
+    text-align: left;
+}
+#section-8 .right {
+    width: 700px;
+    height: 400px;
+    display: inline-block;
+    font-size: 20px;
+    text-align: left;
+    font-size: 0;
+}

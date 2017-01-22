@@ -1,0 +1,46 @@
+body {
+    font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+    background-color: #eee;
+}
+header {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+header h1{
+    margin: 10px 20px;
+    font-size: 3.4rem;
+    font-weight: 700;
+    color: #555;
+    text-align: center;
+}
+header h2 {
+    margin: 20px 0 30px 0;
+    font-size: 3.4rem;
+    font-weight: 700;
+    color: #888;
+    text-align: center;
+}
+/* articale */
+article {
+    padding: 30px 50px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    box-shadow: 0 0 0 0, 0 6px 12px rgba(34,34,34,0.1);
+}
+
+article p {
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+/* footer */
+footer {
+    line-height: 50px;
+    text-align: center;
+    color: #555;
+}

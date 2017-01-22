@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>float layout4</title>
+    <style type="text/css">
+        header,
+        footer {
+            background-color: #ccc;
+            text-align: center;
+            line-height: 50px;
+        }
+        .layout_aside, .layout_main {
+            text-align: center;
+            margin:  10px 0;
+            line-height: 50px;
+        }
+        .layout_aside {
+            background-color: aquamarine;
+            width: 200px;
+            float: left;
+        }
+        .layout_main {
+            background-color: blueviolet;
+            margin-left: 420px;
+        }
+        .layout_aside_second {
+            margin-left: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+<header>顶部</header>
+<aside class="layout_aside layout_aside_first">第1个侧边栏宽度固定</aside>
+<aside class="layout_aside layout_aside_second">第2个侧边栏宽度固定</aside>
+<div class="layout_main">主内容栏宽度自适应</div>
+<footer>底部</footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>grail_layout2</title>
+    <style type="text/css">
+        header,
+        footer {
+            background-color: blanchedalmond;
+            line-height: 50px;
+            text-align: center;
+        }
+        .layout {
+            padding-right: 220px;
+        }
+        .layout:after {
+            clear: both;
+            content: '';
+            display: table;
+        }
+        .layout_main, .layout_aside {
+            margin: 10px 0;
+            text-align: center;
+            line-height: 50px;
+
+        }
+        .layout_main {
+            width: 100%;
+            float: left;
+            background-color: blueviolet;
+        }
+        .layout_aside {
+            width: 200px;
+            float: right;
+            margin-right: -220px;
+      
+            background-color: darkolivegreen;
+        }
+
+
+    </style>
+</head>
+<body>
+<header>顶部</header>
+<div class="layout">
+    <div class="layout_main">主内容宽度自适应</div>
+    <div class="layout_aside">侧边宽度固定</div>
+</div>
+<footer>底部</footer>
+</body>
+</html>

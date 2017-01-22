@@ -14,3 +14,19 @@
 #example-navbar-collapse a:hover {
     color: white;
 }
+/* footer p的选择器重新写*/
+footer {
+    line-height: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+footer hr {
+    border: 1px solid #eee;
+}
+footer p{
+    color: #0088cc;
+    margin-top: 10px;
+    word-spacing: 10px;
+}
+
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" /> <!-- 禁止将数字变成电话号码 -->
+    <meta content="yes" name="apple-mobile-web-app-capable"><!-- 允许全屏模式浏览，隐藏浏览器导航栏 -->
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="theme-color" content="#91D4DA">
+    <title>安装Gulp</title>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../static/css/normalize.css" rel="stylesheet" />
+    <link href="install.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+    <div class="main">
+        <article>
+            <h1>安装gulp</h1>
+            <p>
+                就目前所了解而言，Grunt是Node的一个包，Node通过NPM管理所有的包，而Grunt的主要作用是搭建了一个构建平台，所谓构建平台，就是可以将压缩、语法校验、单元测试、文档生成、文件合并等常用功能，一站式实现。
+
+                当然Grunt自身并没有那么复杂，它只是一个平台，想要实现常用功能模块，需要下载Grunt的包，也即是Node的包，通过NPM管理，下载后按照Grunt规定的语法格式及API，编写Grunt的配置文件，从而通过grunt命令执行grunt文件的各项配置，如：合并、压缩、校验、单元测试、文档生成等。
+            </p>
+            <h3>1. 建立一个简单的web文件包 创建以下文件</h3>
+            <pre>
+                index.html
+                gulpfile.js
+            </pre>
+            <h3>2. 全局安装</h3>
+            <pre>npm install -gloabal gulp</pre>
+            <h3>3. 到对应项目目录再局部安装,作为项目的开发依赖</h3>
+            <pre>npm install --save-dev gulp</pre>
+            <h3>4.验证是否安装成功</h3>
+            <pre>gulp -v  // 查看版本号</pre>
+        </article>
+        <article>
+            <h1>使用gulp构建本地开发web服务器</h1>
+            <h3>1. 查看web文件包</h3>
+            <p>
+                index.html<br>
+                node_modules/<br>
+                gulpfile.js<br>
+            </p>
+			<h3>2. 安装对应的的gulp插件</h3>
+            <p>一.进入控制台，进入对应项目地址</p>
+            <pre>   node //启动node</pre>
+			<p>二.安装gulp-connect插件</p>
+			<pre>   npm install gulp-connect  // 这个插件是gulp模拟静态服务器的插件</pre>
+			<p>三.安装gulp-livereload插件</p>
+			<pre>   npm install gulp-livereload  // 这个插件是自动刷新用的</pre>
+			<h2>编写gulpfile.js文件</h2>
+			<h4>想让工作更轻松更自动，就要好好写gulpfile.js</h4>
+
+            <pre name="code">var gulp = require("gulp");
+                var conncet = require("gulp-connect"); // 静态服务
+                var livereload = require("gulp-livereload"); // 自动刷新
+            </pre>
+			<h2>2. 启动静态服务器</h2>
+            //使用connect启动一个web服务器
+            <pre name="code">
+
+                gulp.task("startServer", function () {  // 任务名称不要有空格
+                    conncet.server({
+                        liverload:true,port: 9000  // 自动刷新，端口号：9000
+                    });
+                });
+            </pre>
+            <h2>3. 编写默认任务</h2>
+            <pre>
+                // 默认任务
+                gulp.task("default", function() {
+                    gulp.start("startServer");  //启动一个web服务器
+                });
+                gulp每次启动的时候（在控制台写gulp）都会运行默认任务
+            </pre>
+            <h2>4. 完成半自动化</h2>
+            <pre>
+                gulp.task("qinghuancun", function() {
+                    // 清除缓存，或者说，重新加载所有html文件
+                    gulp.src("*.html")
+                        .pipe(connect.reload());
+                });
+
+                // gulp.src(globs[,options]);
+                // 输出（Emits）符合所提供的匹配模式的文件。
+            </pre>
+        </article>
+
+
+
+
+    </div>
+</div>
+<footer>
+    @2017 unatang
+</footer>
+
+
+</body>
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+</html>
