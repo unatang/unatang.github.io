@@ -61,8 +61,27 @@ header hr {
     height: 301px;
 }
 .one-img {
+    position: relative;
     width: 641px;
     float: left;
+}
+.cover-left {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 191px;
+    height: 301px;
+    background: green;
+    opacity: 0.20;
+}
+.cover-right {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 191px;
+    height: 301px;
+    background: red;
+    opacity: 0.20;
 }
 .one-aside {   /* 宽度 浮动 */
     width: 203px;

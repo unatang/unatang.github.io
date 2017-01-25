@@ -89,6 +89,26 @@
                 // gulp.src(globs[,options]);
                 // 输出（Emits）符合所提供的匹配模式的文件。
             </pre>
+            <h2>5. 监听html文件</h2>
+            <pre>
+                gulp.task("watchHtml", function() {
+                    //监听所有html文件，如果有变化，则执行清除缓存方法
+                    gulp.watch(["*.html"], ["html"]);
+                }
+            </pre>
+            <h2>6. 把监听任务追加到启动服务器任务中</h2>
+            <p>新建一个任务列表，把监听任务与服务器任务放在列表中</p>
+            <pre>
+                gulp.task("taskList", ["startServer", "watchHtml"]);
+                gulp.task("default", function() {  //修改默认任务
+                    gulp.start("taskList");  //执行任务列表
+                });
+            </pre>
+            <h2>7. 查看内容</h2>
+            <pre>
+                //命令行输入 gulp
+                //进入http://loaclhost:9000查看index.html内容
+            </pre>
         </article>
 
 
