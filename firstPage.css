@@ -1,5 +1,13 @@
-.container {
+/*
+ * Override Bootstrap's default container.
+ */
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1200px;
+    }
 }
+
 /* nav 背景 标签更改颜色 */
 .navbar-inverse{
     background-color: #0593d3;
@@ -61,18 +69,13 @@
 }
 /* footer p的选择器重新写*/
 footer {
-    line-height: 20px;
+    padding: 40px 0;
+    color: #777;
     text-align: center;
-    font-weight: bold;
-}
-footer div {
-    padding-bottom: 30px;
-}
-footer hr {
-    border: 1px solid #eee;
+    background-color: #f9f9f9;
+    border-top: 1px solid #e5e5e5;
 }
 footer p{
-    color: #777;
     margin-bottom: 0;
 }
 footer p:last-child {
