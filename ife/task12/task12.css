@@ -1,4 +1,16 @@
-
+thead {
+    background-color: black;
+    color: white;
+}
+tbody tr {
+    font-weight: bold;
+}
+tbody tr:nth-child(even) {
+    background-color: #a49fac;
+}
+tbody tr:nth-child(-n+3) {
+    color: red;
+}
 
 input {
     width: 170px;
