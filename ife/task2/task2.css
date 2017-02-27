@@ -1,0 +1,178 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: #eee;
+    font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+}
+ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+ul, ol {
+    position: relative;
+    left: 2em;
+}
+ol {
+    font-weight: bold;
+}
+article a {
+    color: blue;
+}
+/* 设置前两幅图片 */
+.pic {
+    width: 300px;
+    height: 220px;
+    margin: 10px 0;
+}
+/* h1, h3, h5 */
+hgroup{
+    line-height: 2.3em;
+}
+hgroup h3, hgroup h5 {
+    color: #5e5e5e;
+}
+/* main 主体部分 */
+.main {
+    position: relative;
+}
+/* header */
+header {
+    height:  55px;
+    margin-left: 30px;
+    margin-right: 34px;
+    background-color: black;
+}
+header ul {
+    width: 30em;
+    float: right;
+    overflow: hidden;
+}
+header ul li {
+    float: left;
+    height: 55px;
+    text-align: center;
+}
+header ul li a {
+    color: white;
+    line-height: 3em;
+    display: block;
+    padding: 0.2em 1em;
+    text-decoration: none;
+}
+header ul li:hover {
+    cursor:pointer;
+    border-bottom: 3px solid red;
+    color: #e6e6e6;
+}
+header img {
+    width: 100px;
+    height: 55px;
+    left: 25px;
+    position: relative;
+}
+/* article .three 设置多张图片大小 */
+.three img {
+    width: 100px;
+    height: 100px;
+}
+figure {
+    width: 115px;
+    height: 150px;
+    left: 5%;
+    position: relative;
+    margin: 10px 5px;
+    padding-left: 15px;
+    border: 1px solid black;
+}
+figcaption {
+    margin: 5px 5px;
+}
+figure img {
+    text-align: center;
+}
+article,aside {
+    border: 1px solid #bbbbbb;
+    margin: 20px 50px;
+    padding: 35px 20px;
+    background-color: white;
+    box-shadow: 3px 3px 2px #aaaaaa;
+}
+article .centerText {
+    text-indent: 2em;
+}
+/* article .four 表格 */
+.four table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.four table th {
+    background-color: #5a5a5a;
+    color: white;
+    text-align: left;
+}
+.four table tr:last-child {
+    background-color: #A3A3A3;
+    font-weight: bold;
+}
+.four table tr td, .four table tr th {
+    height: 30px;
+    vertical-align: center;
+    padding-left: 10px;
+}
+.four p{
+    margin-top: 1em;
+}
+/* asideRight 侧边栏 表单 ***/
+aside{
+    display: block;
+}
+aside hgroup {
+    border-left: 5px solid #A3A3A3;
+    padding-left: 10px;
+}
+aside form{
+    margin: 0 auto;
+}
+aside table {
+    margin: 0 auto;
+}
+[type=submit] {
+    width: 100%;
+    font-size: 1.2em;
+    padding: 8px ;
+    color: white;
+    border-radius: 12px;
+    background-color: blue;
+}
+
+/* 左右两条黑色div */
+.left{
+    width: 30px;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    float: left;
+}
+.right {
+    width: 30px;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    float: right;
+}
+/* footer */
+footer {
+    margin-left: 30px;
+    margin-right: 33px;
+    padding: 20px 0;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
