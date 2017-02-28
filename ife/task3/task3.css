@@ -1,0 +1,52 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+}
+/* main 父元素 */
+.main{
+    margin: 20px 20px;
+    border: 1px solid #999;
+    background-color: #eee;
+    overflow: hidden;
+}
+img {
+    width: 80px;
+    height: 80px;
+}
+.left, .right, .center {
+    background-color: white;
+    border: 1px solid #999;
+    margin: 20px;
+}
+.left {
+    float: left;
+    width: 160px;
+    padding: 20px;
+}
+.leftDes {
+    float: left;
+}
+.leftTip {
+    float: right;
+}
+.right {
+    float: right;
+    width: 120px;
+}
+.rightImages {
+    margin: 0 20px;
+}
+.rightImages img {
+    padding-bottom: 20px;
+}
+.rightImages img:first-child {
+    padding-top: 20px;
+}
+.center {
+    margin-left: 240px;
+    margin-right: 160px;
+    padding: 20px;
+    border: 1px solid #999;
+}
