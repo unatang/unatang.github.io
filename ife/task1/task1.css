@@ -1,0 +1,43 @@
+* {
+    padding: 0px;
+    margin: 0;
+}
+img {
+    width: 260px;
+    height: 200px;
+}
+.main {
+    position: relative;
+}
+.left {
+    float: left;
+    width: 30px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+}
+.right {
+    float: right;
+    width: 30px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: black;
+}
+header, footer,.center {
+    margin-left: 40px;
+    margin-right: 35px;
+}
+header{
+    padding-top: 20px;
+}
+footer {
+    padding-bottom: 20px;
+}
+header ul, .two ul, .two figure, .three ol {
+    position: relative;
+    left: 5%;
+}
