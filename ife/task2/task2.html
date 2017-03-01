@@ -147,30 +147,36 @@
             </ol>
             <p>下面是一个表格，给表格加一个border="1"好让你看出是一个表格</p>
             <table border="1">
-                <tr>
-                    <th>表头</th>
-                    <th>表头</th>
-                    <th>表头</th>
-                </tr>
-                <tr>
+                <thead>
+                    <tr>
+                        <th>表头</th>
+                        <th>表头</th>
+                        <th>表头</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
                     <td>表内容单元格</td>
                     <td>表内容单元格</td>
                     <td><a href="#">操作</a></td>
                 </tr>
-                <tr>
-                    <td>表内容单元格</td>
-                    <td>表内容单元格</td>
-                    <td><a href="#">操作</a></td>
-                </tr>
-                <tr>
-                    <td>表内容单元格</td>
-                    <td>表内容单元格</td>
-                    <td><a href="#">操作</a></td>
-                </tr>
-                <tr>
-                    <td>总计</td>
-                    <td colspan="2">1000</td>
-                </tr>
+                    <tr>
+                        <td>表内容单元格</td>
+                        <td>表内容单元格</td>
+                        <td><a href="#">操作</a></td>
+                    </tr>
+                    <tr>
+                        <td>表内容单元格</td>
+                        <td>表内容单元格</td>
+                        <td><a href="#">操作</a></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>总计</td>
+                        <td colspan="2">1000</td>
+                    </tr>
+                </tfoot>
             </table>
         </article>
 
@@ -225,18 +231,21 @@
                     <tr>
                         <td>个人描述:</td>
                         <td>
-                            <textarea name="person" cols="30" rows="3"></textarea>
+                            <textarea name="person" cols="50" rows="3"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="确认提交" />
                         </td>
                     </tr>
                 </table>
-                <input type="submit" value="确认提交" />
             </form>
         </aside>
     </div>
     <footer>
         <span>版权所有&copy;</span>
     </footer>
-
 </div>
 </body>
 </html>

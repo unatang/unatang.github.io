@@ -39,11 +39,13 @@ hgroup h3, hgroup h5 {
     position: relative;
 }
 /* header */
-header {
-    height:  55px;
+header, footer {
     margin-left: 30px;
     margin-right: 34px;
     background-color: black;
+}
+header {
+    height:  55px;
 }
 header ul {
     width: 30em;
@@ -107,23 +109,20 @@ article .centerText {
 .four table {
     width: 100%;
     border-collapse: collapse;
+    border: 1px solid #a49fac;
 }
-.four table th {
-    background-color: #5a5a5a;
+.four thead {
+    background-color: black;
     color: white;
     text-align: left;
 }
-.four table tr:last-child {
-    background-color: #A3A3A3;
+.four tfoot {
+    background-color: #a49fac;
     font-weight: bold;
+    border: 1px solid #a49fac;
 }
-.four table tr td, .four table tr th {
-    height: 30px;
-    vertical-align: center;
-    padding-left: 10px;
-}
-.four p{
-    margin-top: 1em;
+.four table td, .four table th {
+    padding: 5px 0 5px 5px;
 }
 /* asideRight 侧边栏 表单 ***/
 aside{
@@ -135,9 +134,6 @@ aside hgroup {
 }
 aside table {
     margin: 0 auto;
-}
-table td {
-    padding: 10px 0;
 }
 table .tip {
     color: #D2D2D2;
@@ -151,7 +147,6 @@ table .tip {
     border-radius: 12px;
     background-color: blue;
 }
-
 /* 左右两条黑色div */
 .left{
     width: 30px;
@@ -173,10 +168,7 @@ table .tip {
 }
 /* footer */
 footer {
-    margin-left: 30px;
-    margin-right: 33px;
     padding: 20px 0;
     text-align: center;
-    background-color: black;
     color: white;
 }
