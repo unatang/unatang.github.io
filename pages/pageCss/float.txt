@@ -1,0 +1,181 @@
+总结一下对CSS中浮动、定位、分列布局、父容器塌陷问题的一些心得。
+浮动，定位，盒模型是css中最重要的概念。
+一. 浮动:
+    1. display: inline-block; 控制元素垂直对齐横向排列, display是显示状态的。
+    2. float: left/right; 元素脱离文档流浮动， float针对块级元素。
+二. 定位:
+    通常光浮动是不能够满足要求的，需要配合定位来布局。有四种定位，
+    相对定位(postion: relative),绝对定位(postion: absolute),
+    固定定位(postion: fixed), 默认,没有定位（postion: static)。
+
+    1. postion: relative,相对定位的位置是相对于元素自己在文档流中的位置。
+        通过let,right进行设置。
+    2. postion: absolute, 绝对定位的位置是相对于离自己最近且已定位的父元素。
+             元素设置绝对定位就会与脱离文档流，不占据空间。通过除了left,right
+             进行设置，还可以z-index: auto/1 进行层次设置。
+    3. postion: fixed, 固定定位的位置是相对于浏览器窗口。
+             通过left,right等进行设置。滚动页面时该元素在窗口固定位置不动。
+    4. postion: static, 默认，没有定位，无视left,right，top,bottom，z-index设置。
+三. 浮动:
+    1.元素不设置浮动，会正常的按顺序显示，块级元素占一行，行级元素紧贴着前一个元素。
+    2. 元素向右浮动，脱离文档流且向右移动，直到右边缘碰到含框的右边缘。
+        有时候元素可能会覆盖文档流中其他元素，因为浮动元素已不占据空间。
+        如果一个，多个元素一起浮动，空间小无法容纳多个元素，那么，其中元素会向下
+        移动，直到被容纳。'卡住'现象，一般元素大小不一样，空间不够大往下移动时，
+        被挡住。
+四. 清除浮动:
+    浮动让元素脱离文档流，但是实际上还是影响后面文档流中的元素。
+    (1)背景不能显示 (2)边框不能撑开 (3)：margin 设置值不能正确显示
+    清理这些浮动元素方法3种。
+    <div class="main">
+        <div class="div1">1</div>
+        <div class="div2">2</div>
+        <div class="div3">3</div>
+        <div class="clear"></div>
+    </div>
+    css代码:
+        .main {border: 1px solid black; background-color: red; margin: 50px;}
+        div1{width: 80px;height: 80px;background: red;float: left;}
+        .div2{width: 80px;height: 80px;background: blue;float: left;}
+        .div3{width: 80px;height: 80px;background: sienna;float: left;}
+
+    1. clear: both, 设置 .clear { clear: both;}
+        问题解决，且父元素的margin, 宽度都可以用了，
+        但是添加了不必要的代码。
+
+    2.overflow: hidden/auto, 表示子元素比父元素大，超过了父元素，处理子元素。
+        父元素设置.main{overflow: hidden; zoom: 1;}。zoom: 1处理IE兼容
+    3.:after，(应用于父元素)。原理: 在被选元素的内容后面插入块级元素，
+        再清除浮动。现代浏览器都支持这个属性。:after被选中元素的后面
+        插入内容。 content: "."插入生成内容，配合伪元素使用。
+        display: block, clear: both; 利用块级元配合clear: both清除浮动。
+        .main:after { content: "."; display: block; clear: both;zoom: 1}
+
+五.两列布局:
+    左侧固定宽，右侧自适应屏幕宽；
+
+    方法一: 浮动 + margin-left
+        <div class="left">left</div>
+        <div class="right">right</div>
+
+        css解析:
+        .left {
+            width: 200px;
+            float: left;
+            background-color: red;
+        }
+        .right {
+            margin-left: 220px;
+            background-color: orange;
+        }
+
+    方法二: 浮动 + 负边距
+        <div class="left">left</div>
+        <div class="right">
+            <div class="rightInner">right,right</div>
+        </div>
+
+        css解析:
+        .left {
+            width: 220px;
+            float: left;
+            margin-left: -100%;
+            background-color: red;
+        }
+        .right {
+            width: 100%;
+            float: left;
+        }
+        .rightInner {
+            background-color: orange;
+            margin-left: 220px;
+        }
+六. 三列布局:
+    两边固定宽度，中间自适应。
+
+    方法一: 自身浮动，float + margin
+    这种方法中间的div需要放在末尾，左右两列任意顺序。
+    css解析:
+        .left {
+            float: left;
+            background-color: green;
+            width: 220px;
+        }
+        .right {
+            float: right;
+            width: 220px;
+            background-color: aquamarine;
+        }
+        .center {
+            margin: 0 220px;
+            background-color: red;
+        }
+
+    <div class="main">
+        <div class="left"><p>left</p></div>
+        <div class="right"><p>right</p></div>
+        <div class="center"><p>center</p></div>
+    </div>
+
+    方法二: 绝对定位 postion + margin
+    这种方法div顺序任意，把左右两个div绝对定位，中间margin撑开。
+    不容易受内部影响，破坏布局。
+
+    html 同上。
+
+    css解析:
+    .main {
+        position: relative;
+    }
+    .left, .right {
+        position: absolute;
+        top: 0;
+        width: 200px;
+    }
+    .left {
+        left: 0;
+        background-color: red;
+    }
+    .right {
+        right: 0;
+        background-color: yellow;
+    }
+
+    方法二: margin负值法
+    中间主体要使用双层标签，外层100%宽度，并且浮动（例子向左浮动),
+    内层div是正在主体. margin: -100%有待研究
+
+    css解析:
+    .main {
+        width: 100%;
+        float: left;
+    }
+    .center {
+        margin: 0 220px;
+        height: 100%;
+        background-color: yellow;
+    }
+    .right, .left {
+        float: left;
+        width: 200px;
+        background-color: #4FACF5;
+    }
+    .left {
+        margin-left: -100%;
+    }
+    #right {
+        margin-left: -200px;
+    }
+
+    <div class="main">
+        <div class="center"><p>left</p></div>
+    </div>
+    <div class="right"><p>right</p></div>
+    <div class="left"><p>center</p></div>
+
+
+
+
+
+
+
