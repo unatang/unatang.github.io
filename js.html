@@ -1,175 +1,97 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
-<html lang="zh-CN">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="format-detection" content="telephone=no" /> <!-- 禁止将数字变成电话号码 -->
-    <meta content="yes" name="apple-mobile-web-app-capable"><!-- 允许全屏模式浏览，隐藏浏览器导航栏 -->
-    <meta content="yes" name="apple-touch-fullscreen">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <meta name="theme-color" content="#91D4DA">
-    <title>IFE 项目练习</title>
-    <link href="static/css/bootstrap.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="">
+    <title> Una 博客</title>
     <link href="static/css/normalize.css" rel="stylesheet" />
-    <link href="h5.css" rel="stylesheet" />
+    <link href="static/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="main.css" rel="stylesheet" />
 </head>
 <body>
-<div class="container">
-    <header>
-        <div class="header-name">
-            <h1>汤翠华的博客</h1>
-            <h2>Tag</h2>
+
+    <nav class="navbar navbar-default navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">汤翠华的博客</a>
+            </div>
+            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="ife.html">项目练习</a></li>
+                    <li><a href="#">关于我</a></li>
+                    <li><a href="#">书列表</a></li>
+                </ul>
+            </div>
         </div>
-    </header>
-    <div class="main">
-        <ul class="dict">
-            <li>
-                <a href="#" class="tag">
-                    百度技术前端学院
-                    <span>6</span>
-                </a>
+    </nav>
 
-            </li>
-            <li>
-                <a href="#" class="tag">
-                    demo
-                    <span>10</span>
-                </a>
+    <div class="container">
+        <div class="row">
+            <div class=" col-sm-3 blog-sidebar">
+                <ul class="nav nav-pills nav-stacked" role="tablist">
+                    <li role="presentation"> <a href="#">目录</a></li>
+                    <li role="presentation" class="active">
+                        <a href="#">JavaScript 简介</a>
+                        <ul class="nav nva-pills" role="tablist">
+                            <li role="presentation">
+                                <ul class="nav nva-pills" role="tablist">
+                                    <li role="presentation">
+                                        <a href="#">基本语法</a>
+                                        <ul class="nav nva-pills" role="tablist">
+                                            <li role="presentation"><a href="#">数据类型和变量</a></li>
+                                            <li role="presentation"><a href="#">字符串</a></li>
+                                            <li role="presentation"><a href="#">数组</a></li>
+                                            <li role="presentation"><a href="#">对象</a></li>
+                                        </ul>
+                                    </li>
+                                    <li role="presentation"><a href="#">数据类型和变量</a></li>
+                                </ul>
+                            </li>
+                            <li role="presentation">
+                                <a href="#">面向对象</a>
+                                <ul class="nav nva-pills" role="tablist">
+                                    <li role="presentation"><a href="#">理解对象</a></li>
+                                    <li role="presentation"><a href="#">创建对象</a></li>
+                                    <li role="presentation"><a href="#">继承对象</a></li>
+                                </ul>
+                            </li>
+                        </ul>
 
-            </li>
-            <li>
-                <a href="#" class="tag">
-                    demo
-                    <span>10</span>
-                </a>
+                    </li>
 
-            </li>
-            <li>
-                <a href="#" class="tag">
-                    demo
-                    <span>10</span>
-                </a>
+                </ul>
+            </div>
+            <div class="col-sm-8  blog-main">
+                <div class="page-header">
+                    <h1>快速入门</h1>
+                </div>
+                <div class="page-content">
+                    <p class="lead">这是小白的零基础JavaScript全栈教程。</p>
+                    <p>JavaScript是世界上最流行的脚本语言，因为你在电脑、手机、平板上浏览的所有的网页，以及无数基于HTML5的手机App，交互逻辑都是由JavaScript驱动的。</p>
+                    <p>简单地说，JavaScript是一种运行在浏览器中的解释型的编程语言。</p>
+                </div>
+            </div>
+        </div>
 
-            </li>
-            <li>
-                <a href="#" class="tag">
-                    css3 demo
-                    <span>10</span>
-                </a>
+        <footer>
 
-            </li>
-            <li>
-                <a href="#" class="tag">
-                    demo
-                    <span>10</span>
-                </a>
+            <hr>
+            <p>
+                Blog · Una
+            </p>
 
-            </li>
-            <li>
-                <a href="#" class="tag">
-                    demo
-                    <span>10</span>
-                </a>
-
-            </li>
-            <li>
-                <a href="#" class="tag">
-                    css3 demo
-                    <span>10</span>
-                </a>
-
-            </li>
-            <li>
-                <a href="#" class="tag">
-                    demo
-                    <span>10</span>
-                </a>
-
-            </li>
-            <li>
-                <a href="#" class="tag">
-                    demo
-                    <span>10</span>
-                </a>
-
-            </li>
-            <li>
-                <a href="#" class="tag">
-                    css3 demo
-                    <span>10</span>
-                </a>
-
-            </li>
-            <li>
-                <a href="#" class="tag">
-                    css3
-                    <span>10</span>
-                </a>
-
-            </li>
-            <li>
-                <a href="#" class="tag">
-                    css3
-                    <span>10</span>
-                </a>
-
-            </li>
-            <li>
-                <a href="#" class="tag">
-                    css3
-                    <span>10</span>
-                </a>
-
-            </li>
-            <li>
-                <a href="#" class="tag">
-                    css3
-                    <span>10</span>
-                </a>
-
-            </li>
-            <li>
-                <a href="#" class="tag">
-                    css3
-                    <span>10</span>
-                </a>
-
-            </li>
-            <li>
-                <a href="#" class="tag">
-                    css3
-                    <span>10</span>
-                </a>
-
-            </li>
-            <li>
-                <a href="#" class="tag">
-                    css3
-                    <span>10</span>
-                </a>
-
-            </li>
-        </ul>
-
-        <article>
-            <h3>JS IFE task1</h3>
-            <ul>
-                <li class="entry-title">
-                    <a href="ife/task13/task13.html" title="ife 零基础JavaScript编码 task1" target="_blank">学习JavaScript基本语法、事件、DOM相关的知识 task1</a>
-                </li>
-            </ul>
-        </article>
+        </footer>
     </div>
-</div>
-<footer>
-    @2017 unatang
-</footer>
 
-
-</body>
 <script src="static/js/jquery.min.js"></script>
 <script src="static/js/bootstrap.min.js"></script>
+<script src="draw.js"></script>
+</body>
 </html>
