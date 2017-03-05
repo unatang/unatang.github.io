@@ -40,8 +40,6 @@ hgroup h3, hgroup h5 {
 }
 /* header */
 header, footer {
-    margin-left: 30px;
-    margin-right: 34px;
     background-color: black;
 }
 header {
@@ -97,7 +95,7 @@ figure img {
 }
 article,aside {
     border: 1px solid #bbbbbb;
-    margin: 20px 50px;
+    margin: 20px;
     padding: 35px 20px;
     background-color: white;
     box-shadow: 3px 3px 2px #aaaaaa;
@@ -116,6 +114,7 @@ article .centerText {
     color: white;
     text-align: left;
 }
+/* table 最后一行 "总计" 设置 */
 .four tfoot {
     background-color: #a49fac;
     font-weight: bold;
@@ -146,25 +145,6 @@ table .tip {
     color: white;
     border-radius: 12px;
     background-color: blue;
-}
-/* 左右两条黑色div */
-.left{
-    width: 30px;
-    height: 100%;
-    background-color: black;
-    position: absolute;
-    top: 0;
-    left: 0;
-    float: left;
-}
-.right {
-    width: 30px;
-    height: 100%;
-    background-color: black;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    float: right;
 }
 /* footer */
 footer {
