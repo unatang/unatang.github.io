@@ -1,0 +1,171 @@
+* {
+    padding: 0px;
+    margin: 0;
+}
+body {
+    background-color: #eee;
+    font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+}
+.main {
+
+    position: relative;
+}
+.center{
+    margin: 20px;
+}
+.left {
+    margin-right: 425px;
+}
+.right {
+    float: right;
+    width: 400px;
+}
+img {
+    width: 260px;
+    height: 200px;
+}
+header, footer {
+    font-size: 14px;
+    width: 100%;
+    height: 60px;
+    background-color: black;
+}
+header nav {
+    float: right;
+    position: relative;
+    right: 50px;
+}
+header nav li {
+    list-style: none;
+    float: left;
+    padding-left: 20px;
+}
+header nav li a {
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    height: 60px;
+    line-height: 60px;
+}
+header nav li a:hover {
+    border-bottom: 3px solid red;
+    color: #808080;
+}
+header nav li:last-child a {
+    color: #ccc;
+}
+header img {
+    width: 90px;
+    height: 60px;
+    position: relative;
+    left: 30px;
+}
+article, aside {
+    padding: 28px 20px;
+    background-color: white;
+    box-shadow: 4px 4px 2px #aaaaaa;
+}
+article {
+    margin: 20px 0;
+}
+/* article .three 图片 边框等设置 */
+.three img {
+    width: 120px;
+    height: 80px;
+    padding: 10px;
+}
+.three figure{
+    border: 1px solid #626262;
+    margin-top: 20px;
+    margin-left: 10px;
+    display: inline-block;
+}
+.three figcaption{
+    text-align: center;
+    padding-top: 10px;
+}
+/* four */
+.four {
+    margin-bottom: 20px;
+}
+.four table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #a49fac;
+}
+.four table td, .four table th {
+    padding: 5px 0 5px 5px;
+}
+.four table thead {
+    background-color: black;
+    color: white;
+    text-align: left;
+}
+.four table tfoot {
+    background-color: #a49fac;
+    border: 1px solid #a49fac;
+}
+/* 链接颜色 */
+article a {
+    color: blue;
+}
+/* 文章段落缩进 */
+.back {
+    text-indent: 2em;
+    line-height: 30px;
+}
+/* 项目一,排名1 行高 等 */
+.list {
+    list-style: none;
+    padding-left: 20px;
+    line-height: 30px;
+}
+/* hgroup 标题行高 颜色 */
+hgroup h1 {
+    padding-bottom: 15px;
+}
+hgroup h2, hgroup+p {
+    font-family: 黑体;
+    color: #5b5b5b;
+    padding-bottom: 10px;
+}
+.one img , .two img {
+    padding: 10px 0;
+}
+/* aside侧栏*/
+aside{
+    display: block;
+}
+aside hgroup {
+    border-left: 5px solid #A3A3A3;
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+aside hgroup h1 {
+    padding-bottom: 5px;
+}
+table .tip {
+    color: #D2D2D2;
+    font-size: 1em;
+}
+[type=submit] {
+    width: 100%;
+    font-size: 1.2em;
+    padding: 8px ;
+    color: white;
+    border-radius: 12px;
+    background-color: blue;
+}
+
+
+/* footer */
+footer {
+    color: white;
+    text-align: center;
+}
+footer p{
+    line-height: 60px;
+    height: 60px;
+}
