@@ -10,7 +10,7 @@ ul{
     padding: 0;
     margin: 0;
     list-style: none;
-  }
+}
 ul, ol {
     position: relative;
     left: 2em;
@@ -38,40 +38,47 @@ hgroup h3, hgroup h5 {
 .main {
     position: relative;
 }
+header, footer{
+    width: 100%;
+    height: 60px;
+    background-color: #181013;
+}
 /* header */
-header, footer {
-    background-color: black;
-}
-header {
-    height:  55px;
-}
-header ul {
-    width: 30em;
+header nav {
     float: right;
-    overflow: hidden;
+    position: relative;
+    right: 50px;
 }
-header ul li {
+header nav li {
+    list-style: none;
     float: left;
-    height: 55px;
-    text-align: center;
+    padding-left: 20px;
 }
-header ul li a {
-    color: white;
-    line-height: 3em;
-    display: block;
-    padding: 0.2em 1em;
+header nav li a {
+    font-size: 14px;
     text-decoration: none;
+    color: white;
+    display: block;
+    height: 60px;
+    line-height: 60px;
 }
-header ul li:hover {
-    cursor:pointer;
+header nav li a:hover {
     border-bottom: 3px solid red;
-    color: #e6e6e6;
+    color: #808080;
 }
 header img {
     width: 100px;
-    height: 55px;
-    left: 25px;
+    height: 60px;
     position: relative;
+    left: 50px;
+}
+/* center 居中 */
+.center {
+    margin: 0 20px;
+}
+article, aside {
+    margin-top: 20px;
+    background-color: white;
 }
 /* article .three 设置多张图片大小 */
 .three img {
@@ -146,9 +153,10 @@ table .tip {
     border-radius: 12px;
     background-color: blue;
 }
-/* footer */
-footer {
-    padding: 20px 0;
-    text-align: center;
+
+footer{
     color: white;
+    line-height: 60px;
+    height: 60px;
+    text-align: center;
 }
