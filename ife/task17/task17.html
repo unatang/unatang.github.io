@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基础JavaScript练习（二）</title>
+    <style type="text/css">
+        .right {
+            position: relative;
+            left: 40px;
+        }
+        #items {
+            width: 800px;
+            height: 300px;
+            border: 1px solid red;
+            margin-top: 50px;
+
+        }
+        #items div {
+            float: left;
+            position: relative;
+            left: 20px;
+            font-size: 10px;
+            text-align: center;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <input type="text" id="text">
+    <input type="button" id="left-in" value="左侧入" />
+    <input type="button" id="right-in" value="右侧入" />
+    <input type="button" id="left-out" class="right" value="左侧出" />
+    <input type="button" id="right-out" class="right" value="右侧出" />
+
+    <div id="items">
+    </div>
+</div>
+
+
+<script src="task17.js">
+</script>
+</body>
+</html>
