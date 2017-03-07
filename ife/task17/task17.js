@@ -15,7 +15,7 @@ window.onload = function () {
                 arr.unshift(a);
                 var innerHTML = "";
                 for(var i = 0; i < arr.length; i++) {
-                    innerHTML += "<div style='width:26px; height:" + arr[i] + "px; left: 7px; top:" + (clientH-arr[i]) + "px'>" + arr[i] + "</div>";
+                    innerHTML += "<div style='width:10px; height:" + arr[i] + "px; left:" + (1 + i * 5) +"px; top:" + (clientH-arr[i]) + "px'>" + arr[i] + "</div>";
                 }
                 items.innerHTML = innerHTML;
             } else {
@@ -24,7 +24,7 @@ window.onload = function () {
         } else {
             alert("输入10 —— 100之间的数");
         }
-
+        text.value = "";
     }, false);
 
     var rightIn = document.getElementById("right-in");
@@ -35,8 +35,7 @@ window.onload = function () {
                 arr.push(a);
                 var innerHTML = "";
                 for(var i = 0; i < arr.length; i++) {
-                    innerHTML += "<div style='height:" +  arr[i] +"px; width: 26px; left: 7px; top: "
-                        + (clientH - arr[i]) +"px '>" + arr[i] + "</div>";
+                    innerHTML += "<div style='width:10px; height:" + arr[i] + "px; left:" + (1 + i * 5) +"px; top:" + (clientH-arr[i]) + "px'>" + arr[i] + "</div>";
                 }
                 items.innerHTML = innerHTML;
             } else {
@@ -45,6 +44,7 @@ window.onload = function () {
         } else {
             alert("输入10 —— 100之间的数");
         }
+        text.value = "";
     },false)
 
     var leftOut = document.getElementById("left-out");
@@ -54,8 +54,7 @@ window.onload = function () {
             alert("删除: " + a);
             var innerHTML = "";
             for(var i = 0; i < arr.length; i++) {
-                innerHTML += "<div style='height:" +  arr[i] +"px; width: 30px; left: 2px; top: "
-                    + (clientH - arr[i]) +"px '>" + arr[i] + "</div>";
+                innerHTML += "<div style='width:10px; height:" + arr[i] + "px; left:" + (1 + i * 5) +"px; top:" + (clientH-arr[i]) + "px'>" + arr[i] + "</div>";
             }
             items.innerHTML = innerHTML;
         }
@@ -69,8 +68,7 @@ window.onload = function () {
             alert("删除: " + a);
             var innerHTML = "";
             for(var i = 0; i < arr.length; i++) {
-                innerHTML += "<div style='height:" +  arr[i] +"px; width: 30px; left: 2px; top: "
-                    + (clientH - arr[i]) +"px '>" + arr[i] + "</div>";
+                innerHTML += "<div style='width:10px; height:" + arr[i] + "px; left:" + (1 + i * 5) +"px; top:" + (clientH-arr[i]) + "px'>" + arr[i] + "</div>";
             }
             items.innerHTML = innerHTML;
         }
