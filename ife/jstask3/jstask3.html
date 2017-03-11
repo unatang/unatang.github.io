@@ -34,17 +34,17 @@
      * 返回一个数组，格式见函数中示例
      */
     function getData() {
-        var list = document.getElementsByTagName("li");
-        //console.log(list[0].innerText); //北京空气质量:90
+        var source = document.getElementById("source");
+        var list = source.getElementsByTagName("li");
         var data = []; //[["北京", 90],....]
         for(var i = 0; i < list.length; i++) {
             if(list[i].innerHTML != "") {
-                var city = list[i].innerText.slice(0,2);
-                var num = list[i].innerText.slice(7, 9);
+                //var city = list[i].innerText.slice(0,2); 获取城市
+                var city = list[i].innerText.match(/^[\u4E00-\u9FA5]{2}/);
+                var num = list[i].getElementsByTagName("b")[0].innerText;
                 data.push([city, num]);
             }
         }
-        //console.log(data);
         return data;
         /*
          data = [
@@ -93,16 +93,22 @@
 
     function btnHandle() {
         var aqiData = getData();
+        console.log(aqiData);
         aqiData = sortAqiData(aqiData);
         render(aqiData);
+     /*
+        这样设置是因为，前面在获取li时，没有先获取id=source,
+        多次点击按钮会获取页面所有Li，排序显示。显示结果错乱。
+        var btn = document.getElementById("sort-btn");
+        btn.disabled = true;
+    */
+
     }
 
     function init() {
         // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
         var btn = document.getElementById("sort-btn");
-        btn.addEventListener("click", function () {
-            btnHandle();
-        })
+        btn.addEventListener("click", btnHandle);
     }
 
     init();
