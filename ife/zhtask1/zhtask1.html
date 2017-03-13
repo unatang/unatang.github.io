@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单（一）单个表单项的检验</title>
+    <style type="text/css">
+        #submit {
+            width: 50px;
+            height: 40px;
+            background-color: #2c3896;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            width: 300px;
+            height: 40px;
+            border-radius: 15px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .name {
+            font-size: 1.5em;
+            padding-right: 10px;
+        }
+        #show {
+            color: #b1b1b1;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td class="name">名称: </td>
+        <td><input type="text" id="inputText"></td>
+        <td><button id="submit">验证</button></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td id="show">必填，长度为4~16个字符</td>
+        <td></td>
+    </tr>
+</table>
+
+<script src="zhtask1.js"></script>
+</body>
+</html>
