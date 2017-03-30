@@ -3,34 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>books</title>
-    <style type="text/css">
-
-        #list td {
-            width: 100px;
-            height: 30px;
-            margin: 5px 0;
-            text-align: center;
-        }
-        .search {
-            margin: 50px 0;
-        }
-        .search input, #search-btn {
-            margin-left: 10px;
-        }
-    </style>
+    <link href="books.css" rel="stylesheet" />
 </head>
 <body>
-<div>
-    书名: <input class="input" type="text" name="name" />
-    分类: <input class="input" type="text" name="type" />
-    单价: <input class="input" type="text" name="price" />
-    <input id="add" type="button" value="添加"/>
+<div class="one">
+    <div>
+        <label>
+            书名: <input class="input" type="text" name="name" />
+        </label>
+        <div class="msg"></div>
+    </div>
+
+    <div>
+        <label>
+            分类: <input class="input" type="text" name="type" />
+        </label>
+        <div class="msg"></div>
+    </div>
+
+    <div>
+        <label>
+            单价: <input class="input" type="text" name="price" />
+        </label>
+        <div class="msg"></div>
+    </div>
+
+    <div>
+        <input id="add" type="button" value="添加"/>
+    </div>
+
 </div>
 <div class="search">
     <label>输入商品名称: <input type="text" name="shop-name" /><button id="search-btn">查找购物车商品</button></label>
-    <div id="search-list"></div>
+    <div id="search-msg" class="msg"></div>
 </div>
 <div id="list"></div>
-<script src="book2.js"></script>
+<script src="check.js"></script>
+<script src="crud.js"></script>
+<script src="init.js"></script>
 </body>
 </html>
