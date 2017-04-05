@@ -10,11 +10,15 @@ function addBtn() {
             books = JSON.parse(localStorage.getItem("books"));
             //console.log(typeof books);
         }
+
         var value = {
             "name": inputs[0].value,
             "type": inputs[1].value,
-            "price": inputs[2].value
-        }
+            "price": parseInt(inputs[2].value)
+        };
+        inputs[0].value = "";
+        inputs[1].value = "";
+        inputs[2].value = "";
         //console.log(value.name);
         if(value.name == "" || value.type == "" || value.price == "") {
             alert("请将姓名, 商品, 价格填写完整。");
@@ -22,30 +26,31 @@ function addBtn() {
             books.push(value);
         }
         localStorage.setItem("books", JSON.stringify(books)); //localStorage存储必须存储字符串
-        loadAll();
+        var getBooks = JSON.parse(localStorage.getItem("books")); // json字符串转换为对象 返回值必须要清楚
+
+        // setBook(books);
+        // var getBooks = getBook(books);
+        loadAll(getBooks);
     });
 }
 
 
-function loadAll() {
+function loadAll(arr) {
     var list = document.getElementById("list");
-    var books = JSON.parse(localStorage.getItem("books")); // json字符串转换为对象 返回值必须要清楚
     //console.log(books); //[object, object];
-    if (books == null) { //第一次 空 报错， return 返回不执行渲染
+    if (arr == null) { //第一次 空 报错， return 返回不执行渲染
         return;
     }
-    if (books.length == 0) {  //books是空数组 被删完
+    if (arr.length == 0) {  //books是空数组 被删完
         list.innerHTML = "";
         return;
     }
     var innerHTML = "<table id='table'>";
-    innerHTML += "<tr><td>书名</td><td>分类</td><td>单价</td><td><select>" +
-        "<option value='volvo'>1 - 100</option>" + "<option value='volvo'>101 - 200</option>"
-        "</select></td></tr>";
-    for(var i = 0; i < books.length; i++) {
-        innerHTML += "<tr><td>" + books[i]["name"]
-            + "</td><td><input type='text' value='" + books[i]["type"]
-            + "'</td><td><input type='text' value='" + books[i]["price"]
+    innerHTML += "<tr><td>书名</td><td>分类</td><td>单价</td></tr>";
+    for(var i = 0; i < arr.length; i++) {
+        innerHTML += "<tr><td>" + arr[i]["name"]
+            + "</td><td><input type='text' value='" + arr[i]["type"]
+            + "'</td><td><input type='text' value='" + arr[i]["price"]
             + "'</td><td><button books_id =" + i + " name='delete'>删除</button></td>"
             + "<td><button modify_id= " + i + " name='modify'>修改</button></td></tr>";
     }
@@ -64,7 +69,8 @@ function deleted() {
             var books_id = parseInt(e.target.getAttribute("books_id"));
             books.splice(books_id, 1);
             localStorage.setItem("books", JSON.stringify(books));
-            loadAll();
+            var getBooks = JSON.parse(localStorage.getItem("books")); // json字符串转换为对象 返回值必须要清楚
+            loadAll(getBooks);
         }
     });
 }
@@ -93,15 +99,24 @@ function modify() {
             }
             //console.log(book);
             localStorage.setItem("books", JSON.stringify(books));
-            loadAll();
+            var getBooks = JSON.parse(localStorage.getItem("books")); // json字符串转换为对象 返回值必须要清楚
+            loadAll(getBooks);
         }
     });
 }
+// function setBook(name) {
+//     localStorage.setItem("books", JSON.stringify(name));
+// }
+// function getBook(name) {
+//     return JSON.parse(localStorage.getItem(name));
+// }
+
 
 function search() {
     var searchBtn = document.getElementById("search-btn");
     searchBtn.addEventListener("click", function () {
-        var shopName = document.getElementsByName("shop-name")[0].value;
+        var value = document.getElementById("shop-name").value.trim();
+        var shopName = value;
         //console.log(typeof(shopName));
         var books = JSON.parse(localStorage.books);
         //console.log(books[1]["name"]); //string类型
@@ -110,28 +125,14 @@ function search() {
         //console.log(arr);
         var newArr = [];
         for(var i = 0; i < arr.length; i++) {
-            if(arr[i]["name"] === shopName) {
+            if(arr[i]["name"].search(shopName) !== -1) {
                 newArr.push(arr[i]);
             }
         }
         if (newArr.length == 0) {
             alert("没有查找到");
         } else {
-            searchLoad(newArr);
+            loadAll(newArr);
         }
     });
-}
-
-function searchLoad(arr) {
-    var searchMsg = document.getElementById("search-msg");
-    var innerHTML = "";
-    for(var i = 0; i < arr.length; i++) {
-        innerHTML += "<p><span>" + arr[i]["name"]
-            + "</span><span>" + arr[i]["type"]
-            + "</span><span>" + arr[i]["price"]
-            + "元</span></p>"
-        // innerHTML += "<p>" + arr[i]["name"] + arr[i]["type"] + arr[i]["price"] + "</p>";
-    }
-
-    searchMsg.innerHTML = innerHTML;
 }

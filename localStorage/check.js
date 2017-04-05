@@ -8,6 +8,7 @@ function bookName() {
         inputs[0].style.borderColor = "red";
     }
     inputs[0].onblur = function () {
+        inputs[0].value = inputs[0].value.trim();
         var value = inputs[0].value;
         if(value === "") {
             msg[0].innerHTML = "<p>内容为空，请输入书名</p>";
@@ -34,7 +35,6 @@ function bookName() {
                 }
             }
         }
-
     }
 }
 function price() {
@@ -44,24 +44,34 @@ function price() {
         inputs[2].style.borderColor = "red";
     }
     inputs[2].onblur = function () {
+        inputs[2].value = inputs[2].value.trim();
         var value = inputs[2].value;
-        var reg =/^\d{1,9}$/;
         if(value === "") {
             msg[2].innerHTML = "<p>内容为空，请输入数字</p>";
             inputs[2].style.color = "red";
             inputs[2].style.borderColor = "red";
-        } else if(!(reg.test(value))) {
-            msg[2].innerHTML = "<p>请输入数字好吗</p>";
-            msg[2].style.color = "red";
-            inputs[2].style.color = "red";
-            inputs[2].style.borderColor = "red";
-            inputs[2].value = "";
-
         } else {
-            msg[2].innerHTML = "<p>格式正确</p>";
-            msg[2].style.color = "lightgreen";
-            inputs[2].style.color = "lightgreen";
-            inputs[2].style.borderColor = "lightgreen";
+            var reg = /\D+/;
+            if (reg.test(value)) {  //字符串是否包含非数字字符
+                msg[2].innerHTML = "<p>请输入数字好吗</p>";
+                msg[2].style.color = "red";
+                inputs[2].style.color = "red";
+                inputs[2].style.borderColor = "red";
+                inputs[2].value = "";
+            } else {
+                var num = parseInt(value);
+                if(num > 0 && num < 1000) {
+                    msg[2].innerHTML = "<p>格式正确</p>";
+                    msg[2].style.color = "lightgreen";
+                    inputs[2].style.color = "lightgreen";
+                    inputs[2].style.borderColor = "lightgreen";
+                } else {
+                    msg[2].innerHTML = "<p>数字必须在0-1000之间</p>";
+                    msg[2].style.color = "red";
+                    inputs[2].style.color = "red";
+                    inputs[2].style.borderColor = "red";
+                }
+            }
         }
     }
 }

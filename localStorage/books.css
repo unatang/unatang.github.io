@@ -28,6 +28,9 @@ body {
 .search input, #search-btn {
     margin-left: 10px;
 }
+#list {
+    margin-bottom: 100px;
+}
 #list tr:first-child {
     height: 40px;
     border: 1px solid black;
@@ -46,15 +49,28 @@ body {
     height: 30px;
     border: 1px solid black;
 }
-#search-msg{
+
+.search-price{
+    width: 50px;
+    height: 20px;
+    padding: 0;
+    text-align: center;
+}
+.search span {
+    padding-left: 5px;
+}
+.search-price-btn {
+    margin-left: 20px;
+}
+/* 查询价格 宽高定位 */
+.price {
+    display: inline-block;
+    position: relative;
+    left: 100px;
     width: 500px;
-    height: 150px;
+    height: 50px;
 }
-#search-msg p {
-    padding: 0 auto;
-    height: 10px;
-}
-#search-msg span {
-    color: black;
-    margin-left: 50px;
+#price-msg {
+    width: 200px;
+    height: 50px;
 }

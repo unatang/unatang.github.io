@@ -5,8 +5,10 @@ function init() {
     // var inputs = document.getElementsByTagName("input");
     // var add = document.getElementById("add");
     // var msg = document.getElementsByClassName("msg");  //显示div
+    var books = JSON.parse(localStorage.getItem("books"));
     addBtn();
-    loadAll();
+    searchPrice();
+    loadAll(books);
     search();
     bookName();
     price();

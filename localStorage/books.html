@@ -34,12 +34,23 @@
 
 </div>
 <div class="search">
-    <label>输入商品名称: <input type="text" name="shop-name" /><button id="search-btn">查找购物车商品</button></label>
-    <div id="search-msg" class="msg"></div>
+    <label>
+        输入商品名称: <input type="text" id="shop-name" />
+        <button id="search-btn">查找购物车商品</button>
+    </label>
+    <label class="price">
+        查询价格:<input type="text" class="search-price one"> 元
+        <span>--</span>
+        <input type="text" class="search-price two"> 元
+        <button class="search-price-btn">价格筛选</button>
+        <div id="price-msg"></div>
+    </label>
+
 </div>
 <div id="list"></div>
-<script src="check.js"></script>
 <script src="crud.js"></script>
+<script src="check.js"></script>
+<script src="search-price.js"></script>
 <script src="init.js"></script>
 </body>
 </html>
