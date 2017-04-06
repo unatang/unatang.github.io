@@ -8,6 +8,7 @@ function init() {
     var books = JSON.parse(localStorage.getItem("books"));
     addBtn();
     searchPrice();
+    sortPrice();
     loadAll(books);
     search();
     bookName();

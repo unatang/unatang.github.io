@@ -67,6 +67,7 @@ function price() {
                     inputs[2].style.borderColor = "lightgreen";
                 } else {
                     msg[2].innerHTML = "<p>数字必须在0-1000之间</p>";
+                    inputs[2].value = "";
                     msg[2].style.color = "red";
                     inputs[2].style.color = "red";
                     inputs[2].style.borderColor = "red";
