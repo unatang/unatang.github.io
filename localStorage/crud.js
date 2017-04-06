@@ -31,6 +31,7 @@ function addBtn() {
         // setBook(books);
         // var getBooks = getBook(books);
         loadAll(getBooks);
+        sortPrice();
     });
 }
 
