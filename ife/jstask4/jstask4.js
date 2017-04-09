@@ -1,82 +1,75 @@
 /**
- * Created by lyon on 2017/3/6.
+ * Created by lyon on 2017/4/9.
  */
-window.onload = function () {
-    var text = document.getElementById("text");
-    var items = document.getElementById("items");
-    var leftIn = document.getElementById("left-in");
-    var arr = [];
-    leftIn.addEventListener("click", function () {
-        if(isNaN(parseInt(text.value))) {
+window.onload = function() {
+    var arr = []; //公用存取数组
+
+    function inputValue() {
+        var input = document.getElementById("text"); //input
+        var value = input.value; //获取Input值给 value
+        input.value = "";        //此时可设置为空，方便下次输入
+        if(isNaN(parseInt(value))) {
             alert("请输入数字");
+            return;
         } else {
-            var a = parseInt(text.value);
-            arr.unshift(a);
-            var innerHTML = "";
-            for(var i = 0; i < arr.length; i++) {
-                innerHTML += "<p>" + arr[i] + "</p>";
-            }
-            items.innerHTML = innerHTML;
-            console.log([id="left-in"]);
+            return value;
         }
-    }, false);
-    var rightIn = document.getElementById("right-in");
-    rightIn.addEventListener("click",function () {
-        if(isNaN(parseInt(text.value))) {
-            alert("请输入数字");
-        } else {
-            var a = parseInt(text.value);
-            arr.push(a);
-            var innerHTML = "";
-            for(var i = 0; i < arr.length; i++) {
-                innerHTML += "<p>" + arr[i] + "</p>";
-            }
-            items.innerHTML = innerHTML;
-        }
-    },false)
-    function render(btn) {
-        btn.addEventListener("click", function () {
-            if(isNaN(parseInt(text.value))) {
-                alert("请输入数字");
+    }
+    function addLeft() {
+        var leftIn = document.getElementById("left-in");
+        leftIn.addEventListener("click", function () {
+            var value = inputValue();
+            if(value === undefined) {
+                return;
             } else {
-                if([id="left-in"]) {
-                    arr.unshift(parseInt(text.value));
-                } else {
-                    var innerHTML = "";
-                    for(var i = 0; i < arr.length; i++) {
-                        innerHTML += "<p>" + arr[i] + "</p>";
-                    }
-                    items.innerHTML = innerHTML;
-                }
+                arr.unshift(value);
+                show(arr);
             }
-        }, false)
+        });
     }
 
-    var leftOut = document.getElementById("left-out");
-    leftOut.addEventListener("click", function () {
-        if(arr.length != 0) {
-            var a = arr.shift();
-            alert("删除: " + a);
-            var innerHTML = "";
-            for(var i = 0; i < arr.length; i++) {
-                innerHTML += "<p>" + arr[i] + "</p>"
-                console.log(innerHTML);
+    function addRight() {
+        var rightIn = document.getElementById("right-in");
+        rightIn.addEventListener("click", function () {
+            var value = inputValue();
+            if(value === undefined) {
+               return;
             }
-            items.innerHTML = innerHTML;
-        }
-    }, false)
+            arr.push(value);
+            show(arr);
+        });
+    }
 
+    function delLeft() {
+        var leftOut = document.getElementById("left-out");
+        leftOut.addEventListener("click", function () {
+            arr.shift();
+            show(arr);
+        })
+    }
 
-    var rightOut = document.getElementById("right-out");
-    rightOut.addEventListener("click", function () {
-        if(arr.length != "") {
-            var a = arr.pop();
-            alert("删除: " + a);
-            var innerHTML = "";
-            for(var i = 0; i < arr.length; i++) {
-                innerHTML += "<p>" + arr[i] + "</p>";
-            }
-            items.innerHTML = innerHTML;
+    function delRight() {
+        var rightOut = document.getElementById("right-out");
+        rightOut.addEventListener("click", function () {
+            arr.pop();
+            show(arr);
+        })
+    }
+    function show(arr) {
+        var items = document.getElementById("items");
+        var innerHTML = "";
+        for(var i = 0; i < arr.length; i++) {
+            innerHTML += "<p>" + arr[i] + "</p>";
+
         }
-    },false)
+        items.innerHTML = innerHTML;
+    }
+    function init() {
+        addLeft();
+        addRight();
+        delLeft();
+        delRight();
+    }
+
+    init();
 }
