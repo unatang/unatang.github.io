@@ -1,0 +1,10 @@
+body {
+    background-color: #eee;
+}
+.main {
+    max-width: 1024px;
+    margin: auto;
+}
+.center {
+    margin: 30px 100px;
+}

@@ -34,20 +34,34 @@
 }
 /*  页面左边 blog-post */
 .blog-post {
-    background-color: #eee;
+    /*background-color: #eee;*/
 }
-.blog-post h2 {
+.blog-post h3 {
     font-weight: bold;
-    color: #333;
+    color: #4d4d4d;
     padding-bottom: 10px;
 }
 .blog-post p{
     font: 18px "宋体", Arial, Helvetica, sans-serif;
-    color: white;
+    background-color: #eee;
     line-height: 26px;
-    padding: 10px 0;
-    background-color: #5a5a5a;
+    padding: 20px 0;
 
+}
+.blog-post a {
+    width: 50px;
+    padding: 7px 15px;
+    background-color: #fd8a61;
+    font-size: 14px;
+    color: white;
+
+    border-radius: 5px;
+    text-align: right;
+
+}
+.blog-post a:hover {
+    text-decoration: none;
+    background-color: #2a6496;
 }
 
 /*sidebar 页面左边导航
@@ -87,17 +101,14 @@
 }
 /* footer p的选择器重新写*/
 footer {
-    padding: 40px 0;
+    /*padding: 30px 0;*/
+    margin-top: 50px;
     color: #777;
-    text-align: center;
-    background-color: #f9f9f9;
     border-top: 1px solid #e5e5e5;
+    height: 80px;
+    background-color: #f9f9f9;
+    text-align: center;
 }
-footer p{
-    margin-bottom: 0;
-}
-footer p:last-child {
-    color: #0088cc;
-    margin-top: 10px;
-    word-spacing: 10px;
+.footer-main {
+    margin-top: 30px;
 }
