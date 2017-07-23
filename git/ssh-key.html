@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ssh-key</title>
+</head>
+<body>
+    <h1>远程仓库</h1>
+    <p>本地git仓库与Github仓库之间的传输通过https或者SSH进行传输</p>
+    <h2>windows下的SSH传输</h2>
+    <p>第一步: 创建SSH Key。在用户主目录，找到.ssh文件夹。如果有，再看看
+        这个目录下有没有id_rsa(私钥)和id_rsa.pub（公钥)这两个文件。如果没有，打开Git
+        Bash，创建SSH Key：$ ssh-keygen -t rsa -C 邮箱地址换成自己的邮箱,
+        一路回车。</p>
+    <p>第二步: 登录Github页面，打开settings,点击"SSH and  GPG keys" 任意填写title
+        将id_rsa.pub（公钥)文件内容粘贴复制到大的框里， 添加。则可以看见添加生成
+        的key</p>
+</body>
+</html>
