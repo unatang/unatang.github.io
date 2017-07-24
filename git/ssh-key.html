@@ -8,12 +8,23 @@
     <h1>远程仓库</h1>
     <p>本地git仓库与Github仓库之间的传输通过https或者SSH进行传输</p>
     <h2>windows下的SSH传输</h2>
-    <p>第一步: 创建SSH Key。在用户主目录，找到.ssh文件夹。如果有，再看看
+    <p>第一步: 创建SSH Key。在(用户)主目录，找到.ssh文件夹。如果有，再看看
         这个目录下有没有id_rsa(私钥)和id_rsa.pub（公钥)这两个文件。如果没有，打开Git
-        Bash，创建SSH Key：$ ssh-keygen -t rsa -C 邮箱地址换成自己的邮箱,
+        Bash，创建SSH Key：$ ssh-keygen -t rsa -C "youremail@example.com" 邮箱地址换成自己的邮箱,
         一路回车。</p>
     <p>第二步: 登录Github页面，打开settings,点击"SSH and  GPG keys" 任意填写title
         将id_rsa.pub（公钥)文件内容粘贴复制到大的框里， 添加。则可以看见添加生成
         的key</p>
+    <h2>常用命令</h2>
+    <p>pwd: 显示当前目录</p>
+    <p>git status: 仓库当前的状态</p>
+    <h3>把文件放到Git仓库，只需两步: </h3>
+    <p>1. git add 文件名: 把文件添加到仓库</p>
+    <p>2. git commit -m "本次提交说明" 把文件提交到仓库</p>
+    <h3>查看文件是否被修改</h3>
+    <p>git diff: 查看修改的地方是哪里</p>
+    <p>1. git status: 查看当前仓库状态</p>
+    <p>2. 如果有文件被修改，git diff 文件名，查看修改地方。</p>
+
 </body>
 </html>

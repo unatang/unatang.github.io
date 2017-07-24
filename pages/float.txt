@@ -1,0 +1,72 @@
+浮动
+
+浮动：脱离文档流，向指定方向移动，直到碰到边界或者相邻的浮动元素停下来。
+高度坍塌：浮动元素高度自适应，所以父元素高度坍塌。
+
+清除浮动
+
+一. clear: both; 在左右两侧不予许有浮动元素
+  1. 加一个空div
+     在浮动元素下方加一个空div，并给该div写css样式
+     {clear: both; heigth: 0; overflow: hidden; }
+
+  2.给浮动元素父元素设置高度
+    缺点: 浮动元素高度不确定时不适用
+
+  3.给父元素添加overflow: hidden | overflow: auto
+    overflow: auto;
+    zoom: 1; //处理兼容性问题
+
+  4.万能清除法 after伪类清除法(推荐使用) 父元素.main
+    在元素内插入新的节点，再清除浮动
+     .main {
+        zoom: 1; //处理兼容问题
+     }
+     .main :after {
+        clear: both;
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        visibility: hidden;
+     }
+
+
+
+    <div class="main">
+            <div class="left">left</div>
+            <div class="right">right</div>
+            <!--<div class="three"></div>-->
+    </div>
+
+
+    .main {
+        border: 1px solid black;
+        margin: 50px auto;
+        padding: 50px;
+        color: #fff;
+        height: 100px;
+    }
+    /*.main:after {*/
+        /*clear: both;*/
+        /*content: "";*/
+        /*display: block;*/
+    /*}*/
+    .left, .right {
+        border:1px solid black;
+    }
+    .left {
+        float: left;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+    .right {
+        /*float: right;*/
+        width: 100px;
+        height: 100px;
+        background-color: #2a6496;
+    }
+    /*.three {*/
+        /*clear: both;*/
+    /*}*/
