@@ -20,37 +20,148 @@
 <div class="container">
     <div class="main">
         <article>
-            <h1>安装gulp</h1>
-            <p>
-                就目前所了解而言，gulp是Node的一个包，Node通过NPM管理所有的包，而Grunt的主要作用是搭建了一个构建平台，所谓构建平台，就是可以将压缩、语法校验、单元测试、文档生成、文件合并等常用功能，一站式实现。
-
-                当然Grunt自身并没有那么复杂，它只是一个平台，想要实现常用功能模块，需要下载gulp的包，也即是Node的包，通过NPM管理，下载后按照Grunt规定的语法格式及API，编写Grunt的配置文件，从而通过grunt命令执行grunt文件的各项配置，如：合并、压缩、校验、单元测试、文档生成等。
-            </p>
-            <h3>1. 建立一个简单的web文件包 创建以下文件</h3>
-            <pre>
-                index.html
-                gulpfile.js
-            </pre>
+            <h1>了解Gulp</h1>
+            <div>
+                gulp是部署代码工具(合并，压缩，加密，编译，语法检查等),
+                gulp运行环境依赖node.js,因此需要先安装node.js。
+            </div>
+            <h3>安装gulp</h3>
+            <h3>1. 创建一个文件夹，进入。</h3>
             <h3>2. 全局安装</h3>
+            <p>Gulp需要先全局安装，然后在项目开发目录中安装为本地模块，进入目录执行下面命令: </p>
             <pre>npm install -gloabal gulp</pre>
-            <h3>3. 到对应项目目录再局部安装,作为项目的开发依赖</h3>
             <pre>npm install --save-dev gulp</pre>
-            <h3>4.验证是否安装成功</h3>
+            <h3>3.验证是否安装成功</h3>
             <pre>gulp -v  // 查看版本号</pre>
         </article>
         <article>
-            <h1>使用gulp构建本地开发web服务器</h1>
+            <h3>Gulp基本语法</h3>
+            <p>项目中gulpfile.js是配置文件，下面是在gulpfile.js中的试例</p>
+            <pre>
+                var gulp = require("gulp");
+                var uglify = require("gulp-uglify");
+
+                gulp.task("minify", function(){
+                    gulp.src("js/app.js")
+                    .pipe(uglify())
+                    .pipe(gulp.dest("build"))
+                })
+            </pre>
+            <p>上面代码中，gulpfile.js加载gulp和gulp-uglify模块之后，使用gulp模块的task方法指定任务minify。task方法有两个参数，第一个是任务名，第二个是任务函数。在任务函数中，使用gulp模块的src方法，指定所要处理的文件，然后使用pipe方法，将上一步的输出转为当前的输入，进行链式处理。</p>
+            <p>task方法的回调函数使用了两次pipe方法，也就是说做了两种处理。第一种处理是使用gulp-uglify模块，压缩源码；第二种处理是使用gulp模块的dest方法，将上一步的输出写入本地文件，这里是build.js（代码中省略了后缀名js）。</p>
+
+            <h3>src语法: </h3>
+            <p>gulp模块的src方法，用于产生数据流。它的参数表示所要处理的文件，这些指定的文件会转换成数据流</p>
+            <pre>
+                js/app.js：指定确切的文件名。
+                js/*.js：某个目录所有后缀名为js的文件。
+                js/**/*.js：某个目录及其所有子目录中的所有后缀名为js的文件。
+                !js/app.js：除了js/app.js以外的所有文件。
+
+                gulp.src(['js/**/*.js', '!js/**/*.min.js'])
+            </pre>
+
+            <h3>dest语法: </h3>
+            <p>
+                dest方法将管道的输出写入文件，同时将这些输出继续输出，
+                所以可以依次调用多次dest方法，将输出写入多个目录。
+                如果有目录不存在，将会被新建.
+            </p>
+            <pre>
+                gulp.src('./client/templates/*.jade')
+                .pipe(jade())
+                .pipe(gulp.dest('./build/templates'))
+                .pipe(minify())
+                .pipe(gulp.dest('./build/minified_templates'));
+            </pre>
+            <p>dest方法还可以接受第二个参数，表示配置对象。</p>
+            <pre>
+                gulp.dest('build', {
+                    cwd: './app',
+                    mode: '0644'
+                })
+            </pre>
+
+            <h3>task语法: </h3>
+            <p>
+                task方法用于定义具体的任务。它的第一个参数是任务名，第二个参数是任务函数。下面是一个非常简单的任务函数。
+            </p>
+            <pre>
+                gulp.task('greet', function () {
+                    console.log('Hello world!');
+                });
+            </pre>
+            <p>task方法还可以指定按顺序运行的一组任务。</p>
+            <pre>
+                gulp.task('build', ['css', 'js', 'imgs']);
+            </pre>
+
+            <h3>watch语法: </h3>
+            <p>
+                watch方法用于指定需要监视的文件。一旦这些文件发生变动，就运行指定任务。
+            </p>
+            <pre>
+                gulp.task('watch', function () {
+                    gulp.watch('templates/*.tmpl.html', ['build']);
+                    });
+            </pre>
+            <p>上面代码指定，一旦templates目录中的模板文件发生变化，就运行build任务。</p>
+
+            <p>watch方法也可以用回调函数，代替指定的任务。</p>
+            <pre>
+                gulp.watch('templates/*.tmpl.html', function (event) {
+                    console.log('Event type: ' + event.type);
+                    console.log('Event path: ' + event.path);
+                });
+            </pre>
+            <p>
+                另一种写法是watch方法所监控的文件发生变化时（修改、增加、删除文件），
+                会触发change事件。可以对change事件指定回调函数。
+            </p>
+            <pre>
+                var watcher = gulp.watch('templates/*.tmpl.html', ['build']);
+                watcher.on('change', function (event) {
+                    console.log('Event type: ' + event.type);
+                    console.log('Event path: ' + event.path);
+                });
+            </pre>
+        </article>
+
+        <article>
+            <h1>使用gulp</h1>
             <h3>1. 查看web文件包</h3>
             <p>
-                index.html<br>
                 node_modules/<br>
                 gulpfile.js<br>
             </p>
-			<h3>2. 安装对应的的gulp插件</h3>
-            <p>一.进入控制台，进入对应项目地址</p>
-            <pre>   node //启动node</pre>
+            <h3>2. 在gulpfile.js中可能会使用的插件</h3>
+            <pre name="code">
+                var gulp = require("gulp");
+                imagemin = require('gulp-imagemin'),        //图片压缩
+                sass = require('gulp-ruby-sass'),          //sass
+                minifycss = require('gulp-minify-css'),    //css压缩
+                jshint = require('gulp-jshint'),           //js检查
+                uglify = require('gulp-uglify'),          //js压缩
+                rename = require('gulp-rename'),           //重命名
+                concat = require('gulp-concat'),          //合并文件
+                clean = require('gulp-clean');            //清空文件夹
+                htmlmin = require('gulp-htmlmin'),        //html 处理
+                livereload = require('gulp-livereload'),  //自动刷新浏览器
+                var fileinclude  = require('gulp-file-include');
+            </pre>
+			<h3>3. 进入项目目录，安装对应的的gulp插件</h3>
 			<p>二.安装gulp-connect插件</p>
-			<pre>   npm install gulp-connect  // 这个插件是gulp模拟静态服务器的插件</pre>
+			<pre>
+                npm install
+                gulp-minify-css
+                gulp-concat
+                gulp-uglify
+                gulp-imagemin
+                gulp-clean
+                gulp-rename
+                gulp-htmlmin
+                gulp-file-include --save-de
+            </pre>
 			<p>三.安装gulp-livereload插件</p>
 			<pre>   npm install gulp-livereload  // 这个插件是自动刷新用的</pre>
 			<h2>编写gulpfile.js文件</h2>

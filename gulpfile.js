@@ -2,61 +2,81 @@
  * Created by lyon on 2017/1/25.
  */
 var gulp = require("gulp");
-var less = require("gulp-less"); //less编译
-var concat = require("gulp-concat");
-var conncet = require("gulp-connect"); //静态服务器
-var plumber = require("gulp-plumber"); //处理管道崩溃问题
-var notify = require("gulp-notify"); //报错与不中断当前任务
-var livereload = require("gulp-livereload"); //自动刷新
+// var concat = require("gulp-concat");
+// var conncet = require("gulp-connect"); //静态服务器
+// var plumber = require("gulp-plumber"); //处理管道崩溃问题
+// var notify = require("gulp-notify"); //报错与不中断当前任务
+// var livereload = require("gulp-livereload"); //自动刷新
+var fileinclude  = require('gulp-file-include');
 
-
-//les编译
-gulp.task("less", function () {
-    console.log("less task");
-    gulp.src("less/common.less") //找到需要编译的less文件
-    //如果less文件中有语法错误，用notify插件报错，用plumber保证任务不会停止
-        .pipe(plumber({errorHandler: notify.onError("Error:<%= error.message %>")}))
-        .pipe(less()) //如果没错误， 就编译less
-        .pipe(concat("task6.css"))  //把编译后的css合并为一个，名字是happyasyou
-        .pipe(gulp.dest("./css/"))  //把css文件放到css文件夹下
-        .pipe(livereload());  //重载/刷新页面
+//分离文件
+gulp.task("fileinclude", function () {
+    gulp.src(['./src/**/*.html'])
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
+        .pipe(gulp.dest("dist/"));
 });
-console.log("less task");
-
-
-//监听less文件
-gulp.task("watchLess", function () {
-    //监听所有less文件，如果有变化,则执行less编译方法
-    gulp.watch(["less/*.less"],["less"]);
+//css 压缩
+gulp.task('minifycss',function() {
+    var cssSrc = './src/css/*.css',
+        cssDst = './dist/css';
+    return gulp.src(cssSrc)                  //被压缩的文件
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(minifycss())                       //执行压缩
+        .pipe(gulp.dest(cssDst));        //输出文件夹
 });
 
-//使用connect启动静态服务器
-gulp.task("startServer", function () { //任务名称不要有空格
-    conncet.server({
-        livereload:true,port: 9000  //端口号
-    });
+// js处理
+gulp.task('uglify',function () {
+    var jsSrc = './src/js/*.js',
+        jsDst ='./dist/js';
+    return gulp.src(jsSrc)
+    /*.pipe(jshint('.jshintrc'))
+     .pipe(jshint.reporter('default'))*/
+    // .pipe(concat('main.js'))
+    // .pipe(gulp.dest(jsDst))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(uglify())
+        .pipe(gulp.dest(jsDst));
+});
+//html 处理
+gulp.task('htmlmin', function () {
+    var options = {
+        removeComments: true,//清除HTML注释
+        collapseWhitespace: true,//压缩HTML
+        collapseBooleanAttributes: true,//省略布尔属性的值 <input checked="true"/> ==> <input />
+        removeEmptyAttributes: true,//删除所有空格作属性值 <input id="" /> ==> <input />
+        removeScriptTypeAttributes: true,//删除<script>的type="text/javascript"
+        removeStyleLinkTypeAttributes: true,//删除<style>和<link>的type="text/css"
+        minifyJS: true,//压缩页面JS
+        minifyCSS: true//压缩页面CSS
+    };
+    var htmlSrc = './src/html/*.html',
+        htmlDst = './dist/html';
+    gulp.src(htmlSrc)
+        .pipe(htmlmin(options))
+        .pipe(gulp.dest(htmlDst));//同名的html,会直接替换
 });
 
-//默认任务
-gulp.task("default",function () {
-    console.log("this is a new test page");
-    gulp.start("startServer");  //启动一个web服务器
+// clean被执行时,先清空对应目录下图片、样式、js
+gulp.task('clean',function() {
+    return gulp.src(['./dist/css', './dist/js'], {read: false})
+        .pipe(clean());
 });
 
-gulp.task("clear", function () {
-    //清除缓存，或者说，重新加载所有html文件
-    gulp.src("*.html")
-        .pipe(conncet.reload());
+//watch
+// gulp.watch('./src/css/*.css', ['minifycss']);
+gulp.task('watch',function(){
+    //css
+    gulp.watch('./src/css/*.css', ['minifycss']);
+    //css
+    gulp.watch('./src/js/*.js', ['uglify']);
+    //css
+    gulp.watch('./src/*.html', ['htmlmin']);
 });
-
-gulp.task("watchHtml", function () {
-    //监听所有html文件，如果有变化，则执行清除缓存方法
-    gulp.watch(["*,html"],["html"]);
-});
-
-//把监听任务追加到启动服务器任务中
-//新建一个任务列表，把监听任务与服务器任务都放在列表中
-gulp.task("taskList", ["startServer", "watchHtml", "watchLess"]);
-gulp.task("default", function () {
-    gulp.start("taskList"); //执行任务列表
+// 默认预设任务 清空图片、样式、js并重建 运行语句 gulp
+gulp.task('default', ['clean'],function(){
+    gulp.start('minifycss','uglify','htmlmin','watch');
 });
