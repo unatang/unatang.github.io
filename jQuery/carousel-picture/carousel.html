@@ -2,9 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>jquery 轮播图</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
+    <!--<link href="reset.css" rel="stylesheet" />-->
+    <!--<link href="hslider.css" rel="stylesheet" />-->
+    <link href="carousel.css" rel="stylesheet" />
 </head>
 <body>
-$END$
+<!--<div class="banner">-->
+    <!--&lt;!&ndash;-->
+     <!--这里为上一页下一页点击按钮-->
+    <!--&ndash;&gt;-->
+    <!--<span class="pre">-</span>-->
+    <!--<span class="next">+</span>-->
+    <!--&lt;!&ndash;-->
+     <!--此处为轮播主体，颜色块代替。图片自加-->
+    <!--&ndash;&gt;-->
+    <!--<a href="###" class="first" style="background: pink;">1</a>-->
+    <!--<a href="###" style="background: blue;">2</a>-->
+    <!--<a href="###" style="background: greenyellow;">3</a>-->
+    <!--<a href="###" style="background: deepskyblue;">4</a>-->
+    <!--&lt;!&ndash;-->
+     <!--此处为轮播部分下方小点选择-->
+    <!--&ndash;&gt;-->
+    <!--<div class="choose">-->
+        <!--<span class="red"></span>-->
+        <!--<span></span>-->
+        <!--<span></span>-->
+        <!--<span></span>-->
+    <!--</div>-->
+<!--</div>-->
+
+<section class="wrap">
+    <ul class="slider">
+        <li id="fir"><img src="images/1.jpg" class="bg"/></li>
+        <li id="sec"><img src="images/2.jpg" class="bg"/></li>
+        <li id="thi"><img src="../../images/js.png" class="bg"/></li>
+    </ul>
+    <section class="banner-controll">
+        <a href="#fir">1</a>
+        <a href="#sec">2</a>
+        <a href="#thi">3</a>
+    </section>
+</section>
+
+<script src="../../static/js/jquery.min.js"></script>
+<script src="../../static/js/jquery.HSlider.min.js"></script>
+<script src="carousel.js"></script>
 </body>
 </html>
