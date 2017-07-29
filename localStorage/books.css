@@ -3,7 +3,6 @@
     margin: 0;
 }
 body {
-    background-color: #eee;
     font-size: 18px;
 }
 input, button {
@@ -12,19 +11,29 @@ input, button {
 button,#add {
     font-weight: bold;
 }
+/* main */
+.main {
+    max-width: 1280px;
+    border: 1px solid black;
+    margin: 20px auto;
+}
 /* 三个div 设置外边距 */
 .one, .search, #list{
-    padding-left: 50px;
-    margin-top: 20px;
+    /*padding-left: 50px;*/
+    /*margin-top: 20px;*/
+    border: 1px solid red;
+
 }
 .one {
-    overflow: auto;
+    overflow: hidden;
     height: 100px;
+    line-height: 100px;
+    background-color: #ebebeb;
+    text-align: center;
 }
 /* one > div　宽高，布局 */
 .one>div {
     float: left;
-    width: 250px;
     height: 70px;
 }
 /* .one .msg div设置高度，内边距，字体颜色 */
@@ -34,12 +43,37 @@ button,#add {
     margin-left: 40px;
     color: red;
 }
+.search {
+    overflow: hidden;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+}
 .search input, #search-btn {
     margin-left: 10px;
 }
+#add {
+    padding: 5px 25px;
+    background-color: yellow;
+    color: black;
+}
+/* 所有按钮hover时的颜色 */
+#add:hover, #search-btn:hover, .search-price-btn:hover,
+.sort:hover, #list button:hover{
+    background-color: #ea284a;
+    color: white;
+}
+
 /* 显示区域 #list 设置底部外边距 */
 #list {
-    margin-bottom: 100px;
+
+    background-color: #4eb54e;
+    text-align: center;
+}
+#list table {
+    height: 300px;
+    width: 100%;
+    text-align: center;
 }
 #list tr:first-child {
     height: 40px;
@@ -58,6 +92,11 @@ button,#add {
     width: 50px;
     height: 30px;
     border: 1px solid black;
+}
+.search {
+    height: 100px;
+    background-color: #c4c4c4;
+    text-align: center;
 }
 .search-price{
     width: 50px;

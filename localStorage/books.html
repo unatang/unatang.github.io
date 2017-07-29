@@ -6,50 +6,56 @@
     <link href="books.css" rel="stylesheet" />
 </head>
 <body>
-<div class="one">
-    <div>
+
+<div class="main">
+    <p>学习localStroage 笔记</p>
+    <br>
+    <div class="one">
+        <div>
+            <label>
+                书名: <input class="input" type="text" name="name" />
+            </label>
+            <div class="msg"></div>
+        </div>
+
+        <div>
+            <label>
+                分类: <input class="input" type="text" name="type" />
+            </label>
+            <div class="msg"></div>
+        </div>
+
+        <div>
+            <label>
+                单价: <input class="input" type="text" name="price" />
+            </label>
+            <div class="msg"></div>
+        </div>
+
+        <div>
+            <input id="add" type="button" value="添加"/>
+        </div>
+
+    </div>
+    <div class="search">
         <label>
-            书名: <input class="input" type="text" name="name" />
+            输入商品名称: <input type="text" id="shop-name" />
+            <button id="search-btn">查找购物车商品</button>
         </label>
-        <div class="msg"></div>
-    </div>
-
-    <div>
-        <label>
-            分类: <input class="input" type="text" name="type" />
+        <label class="price">
+            查询价格:<input type="text" class="search-price one"> 元
+            <span>--</span>
+            <input type="text" class="search-price two"> 元
+            <button class="search-price-btn">价格筛选</button>
+            <button id="sort-up-btn" class="sort">升序</button>
+            <button id="sort-down-btn" class="sort">降序</button>
+            <div id="price-msg"></div>
         </label>
-        <div class="msg"></div>
-    </div>
 
-    <div>
-        <label>
-            单价: <input class="input" type="text" name="price" />
-        </label>
-        <div class="msg"></div>
     </div>
-
-    <div>
-        <input id="add" type="button" value="添加"/>
-    </div>
-
+    <div id="list"></div>
 </div>
-<div class="search">
-    <label>
-        输入商品名称: <input type="text" id="shop-name" />
-        <button id="search-btn">查找购物车商品</button>
-    </label>
-    <label class="price">
-        查询价格:<input type="text" class="search-price one"> 元
-        <span>--</span>
-        <input type="text" class="search-price two"> 元
-        <button class="search-price-btn">价格筛选</button>
-        <button id="sort-up-btn" class="sort">升序</button>
-        <button id="sort-down-btn" class="sort">降序</button>
-        <div id="price-msg"></div>
-    </label>
 
-</div>
-<div id="list"></div>
 <script src="crud.js"></script>
 <script src="check.js"></script>
 <script src="sort-price.js"></script>

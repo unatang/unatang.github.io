@@ -10,9 +10,9 @@
     <link href="firstPage.css" rel="stylesheet" />
 </head>
 <body>
-<!-- Fixed navbar -->
+
 <nav class="navbar navbar-default navbar-inverse" role="navigation">
-    <div class="container">
+    <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse"
                     data-target="#example-navbar-collapse">
@@ -21,14 +21,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">汤翠华的博客</a>
+            <a class="navbar-brand" href="/">汤翠华的博客</a>
         </div>
         <div class="collapse navbar-collapse" id="example-navbar-collapse">
             <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
                 <li><a href="dist/html/h5.html">Html</a></li>
                 <li><a href="dist/html/c3.html">Css</a></li>
                 <li><a href="js.html">JavaScript</a></li>
-                <li><a href="#contact">About me</a></li>
+                <li><a href="#">About me</a></li>
             </ul>
         </div>
 
@@ -101,7 +102,7 @@
             <hr>
 
             <div class="post-main">
-                <a href="gulp/install.html">
+                <a href="./dist/html/install.html">
                     <h3 class="post-title">gulp工具使用</h3>
                     <div class="post-content">
                         gulp是Node的一个包，Node通过NPM管理所有的包，而gulp的主要作用是搭建了一个构建平台，所谓构建平台，就是可以将压缩、语法校验、单元测试、文档生成、文件合并等常用功能，一站式实现。

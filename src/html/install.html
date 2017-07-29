@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" /> <!-- 禁止将数字变成电话号码 -->
+    <meta content="yes" name="apple-mobile-web-app-capable"><!-- 允许全屏模式浏览，隐藏浏览器导航栏 -->
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="theme-color" content="#91D4DA">
+    <title>安装Gulp</title>
+    <link href="../../static/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../static/css/normalize.css" rel="stylesheet" />
+    <style>
+        article {
+            padding: 0 50px;
+            margin-bottom: 20px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+
+        }
+        article h1 {
+            font-size: 2.2em;
+            line-height: 1.4;
+            font-weight: 600;
+            margin: .67em 0;
+        }
+        article .title, article .des {
+            line-height: 2;
+            font-size: 1.2em;
+        }
+        article .res {
+            font-size: 1.5em;
+            line-height: 1.5;
+        }
+        article .hightlight {
+            margin: .8em 2em;
+            border: 1px solid #ccc;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            max-width: 90%;
+            max-width: calc(100% - 4em);
+        }
+        pre {
+            display: block;
+            font-family: monospace;
+            white-space: pre;
+            margin: 1.5em 0;
+            font-weight: 600;
+            color: #2a62b3;
+            font-size: 1.3em;
+            line-height: 1.8;
+        }
+
+    </style>
+</head>
+<body>
+@@include('header-nav.html')
+
+<div class="container">
+    <div class="row post-container">
+        <div class="col-sm-9">
+            <div class="post-main">
+                <article>
+                    <h1>了解Gulp</h1>
+                    <p class="res">
+                        gulp是部署代码工具(合并，压缩，加密，编译，语法检查等)。
+                        gulp运行环境依赖node.js,因此需要先安装node.js。
+                    </p>
+                    <h1>安装gulp</h1>
+                    <p class="title">1. 创建一个文件夹，进入。</p>
+                    <p class="title">2. 全局安装</p>
+                    <p class="title">Gulp需要先全局安装，然后在项目开发目录中安装为本地模块，进入目录执行下面命令: </p>
+
+
+                    <figure class="fightlight">
+                        <pre><code><span>npm install -gloabal gulp</span>
+<span>npm install --save-dev gulp</span></code></pre>
+                    </figure>
+
+                    <p>3.验证是否安装成功</p>
+                    <figure class="fightlight">
+                        <pre><code><span>gulp -v  // 查看版本号</span></code></pre>
+                    </figure>
+                </article>
+            </div>
+            <div class="post-main">
+                <article>
+                    <h1>Gulp基本语法</h1>
+                    <p class="title">项目中gulpfile.js是配置文件，下面是在gulpfile.js中的试例</p>
+                    <figure class="fightlight">
+                        <pre><code><span>var gulp = require("gulp");</span>
+<span>var uglify = require("gulp-uglify");</span>
+<span>gulp.task("minify", function(){</span>
+<span>  gulp.src("js/app.js")</span>
+<span>  .pipe(uglify())</span>
+<span>  gulp.src("js/app.js")</span>
+<span>  .pipe(gulp.dest("build"))</span>
+<span>});</span></code></pre>
+                    </figure>
+
+                    <div class="des">上面代码中，gulpfile.js加载gulp和gulp-uglify模块之后，使用gulp模块的task方法指定任务minify。task方法有两个参数，第一个是任务名，第二个是任务函数。在任务函数中，使用gulp模块的src方法，指定所要处理的文件，然后使用pipe方法，将上一步的输出转为当前的输入，进行链式处理。</div>
+                    <div class="des">task方法的回调函数使用了两次pipe方法，也就是说做了两种处理。第一种处理是使用gulp-uglify模块，压缩源码；第二种处理是使用gulp模块的dest方法，将上一步的输出写入本地文件，这里是build.js（代码中省略了后缀名js）。</div>
+
+                    <h3>src语法: </h3>
+                    <p class="title">gulp模块的src方法，用于产生数据流。它的参数表示所要处理的文件，这些指定的文件会转换成数据流。</p>
+                    <figure class="fightlight">
+                        <pre><code><span>js/app.js：指定确切的文件名。</span>
+<span>js/*.js：某个目录所有后缀名为js的文件。</span>
+<span>js/**/*.js：某个目录及其所有子目录中的所有后缀名为js的文件。</span>
+<span>!js/app.js：除了js/app.js以外的所有文件。</span>
+<span>gulp.src(['js/**/*.js', '!js/**/*.min.js'])</span></code></pre>
+                    </figure>
+
+                    <h3>dest语法: </h3>
+                    <p class="title">
+                        dest方法将管道的输出写入文件，同时将这些输出继续输出，
+                        所以可以依次调用多次dest方法，将输出写入多个目录。
+                        如果有目录不存在，将会被新建.
+                    </p>
+                    <figure class="fightlight">
+                        <pre><code><span>gulp.src('./client/templates/*.jade')</span>
+<span>  .pipe(jade())</span>
+<span>  .pipe(gulp.dest('./build/templates'))</span>
+<span>  .pipe(minify())</span>
+<span>  .pipe(gulp.dest('./build/minified_templates'));</span></code></pre>
+                    </figure>
+
+                    <p class="title">dest方法还可以接受第二个参数，表示配置对象。</p>
+                    <figure class="fightlight">
+                        <pre><code><span>gulp.dest('build', {</span>
+<span>  cwd: './app',</span>
+<span>  mode: '0644'</span>
+<span>})</span></code></pre>
+                    </figure>
+
+                    <h3>task语法: </h3>
+                    <p class="title">
+                        task方法用于定义具体的任务。它的第一个参数是任务名，第二个参数是任务函数。下面是一个非常简单的任务函数。
+                    </p>
+                    <figure class="fightlight">
+                        <pre><code><span>gulp.task('greet', function () {</span>
+<span>  console.log('Hello world!');</span>
+<span>});</span></code></pre>
+                    </figure>
+
+                    <p class="title">task方法还可以指定按顺序运行的一组任务。</p>
+                    <figure class="fightlight">
+                        <pre><code><span>gulp.task('build', ['css', 'js', 'imgs']);</span></code></pre>
+                    </figure>
+
+                    <h3>watch语法: </h3>
+                    <p>
+                        watch方法用于指定需要监视的文件。一旦这些文件发生变动，就运行指定任务。
+                    </p>
+                    <figure class="fightlight">
+                        <pre><code><span>gulp.task('watch', function () {</span>
+<span>  gulp.watch('templates/*.tmpl.html', ['build']);</span>
+<span>});</span></code></pre>
+                    </figure>
+                    <p>上面代码指定，一旦templates目录中的模板文件发生变化，就运行build任务。</p>
+
+                    <p>watch方法也可以用回调函数，代替指定的任务。</p>
+                    <pre>
+                gulp.watch('templates/*.tmpl.html', function (event) {
+                    console.log('Event type: ' + event.type);
+                    console.log('Event path: ' + event.path);
+                });
+            </pre>
+                    <p>
+                        另一种写法是watch方法所监控的文件发生变化时（修改、增加、删除文件），
+                        会触发change事件。可以对change事件指定回调函数。
+                    </p>
+                    <pre>
+                var watcher = gulp.watch('templates/*.tmpl.html', ['build']);
+                watcher.on('change', function (event) {
+                    console.log('Event type: ' + event.type);
+                    console.log('Event path: ' + event.path);
+                });
+            </pre>
+                </article>
+            </div>
+            <div class="post-main">
+                <article>
+                    <h1>使用gulp</h1>
+                    <p class="title">1. 查看web文件包</p>
+                    <p>
+                        node_modules/<br>
+                        gulpfile.js<br>
+                    </p>
+                    <h3>2. 在gulpfile.js中可能会使用的插件</h3>
+                    <figure class="fightlight">
+                        <pre><code><span> var gulp = require("gulp");</span>
+<span>imagemin = require('gulp-imagemin'),        //图片压缩</span>
+<span>sass = require('gulp-ruby-sass'),          //sass</span>
+<span> minifycss = require('gulp-minify-css'),    //css压缩</span>
+<span>jshint = require('gulp-jshint'),           //js检查</span>
+<span>uglify = require('gulp-uglify'),          //js压缩</span>
+<span>rename = require('gulp-rename'),           //重命名</span>
+<span> concat = require('gulp-concat'),          //合并文件</span>
+<span>clean = require('gulp-clean');            //清空文件夹</span>
+<span>htmlmin = require('gulp-htmlmin'),        //html 处理</span>
+<span> livereload = require('gulp-livereload'),  //自动刷新浏览器</span>
+<span>var fileinclude  = require('gulp-file-include');</span></code></pre>
+                    </figure>
+
+                    <h3>3. 进入项目目录，安装对应的的gulp插件</h3>
+                    <figure class="lightlight">
+                        <pre><code><span> npm install</span>
+<span>gulp-minify-css</span>
+<span>gulp-concat</span>
+<span>gulp-uglify</span>
+<span>gulp-imagemin</span>
+<span>gulp-clean</span>
+<span>gulp-rename</span>
+<span>gulp-htmlmin</span>
+<span>gulp-livereload</span>
+<span>gulp-file-include --save-de</span></code></pre>
+                    </figure>
+
+                    <h2>4. 编写gulpfile.js文件</h2>
+                    <h4>想让工作更轻松更自动，就要好好写gulpfile.js</h4>
+
+                    <figure class="lightlight">
+                        <pre><code><span>var gulp = require("gulp");</span></code></pre>
+                    </figure>
+                </article>
+            </div>
+        </div>
+        @@include('content-main.html')
+    </div>
+</div>
+
+
+@@include('footer.html')
+
+
+<script src="../../static/js/jquery.min.js"></script>
+<script src="../../static/js/bootstrap.min.js"></script>
+</body>
+</html>
