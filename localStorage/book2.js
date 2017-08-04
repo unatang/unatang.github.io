@@ -94,7 +94,7 @@ window.onload = function () {
            }
         });
     }
-    
+
     function search() {
         var searchBtn = document.getElementById("search-btn");
         searchBtn.addEventListener("click", function () {

@@ -1,0 +1,24 @@
+body {
+    background-color: #eee;
+}
+#show table {
+    width: 500px;
+
+}
+.main {
+    text-align: center;
+}
+#add {
+    padding: 5px 40px;
+    font-size: 16px;
+}
+#add:hover {
+    background-color: #26aa5e;
+    color: white;
+}
+.input {
+    margin: 60px auto;
+}
+#table {
+    margin: 20px auto;
+}

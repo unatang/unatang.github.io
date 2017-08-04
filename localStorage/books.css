@@ -16,18 +16,18 @@ button,#add {
     max-width: 1280px;
     border: 1px solid black;
     margin: 20px auto;
+    text-align: center;
 }
 /* 三个div 设置外边距 */
 .one, .search, #list{
     /*padding-left: 50px;*/
     /*margin-top: 20px;*/
-    border: 1px solid red;
+    /*border: 1px solid red;*/
 
 }
 .one {
-    overflow: hidden;
+    /*overflow: auto;*/
     height: 100px;
-    line-height: 100px;
     background-color: #ebebeb;
     text-align: center;
 }

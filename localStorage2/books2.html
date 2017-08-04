@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>books</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+
+<div class="main">
+    <div class="input">
+        <div>
+            书本名字: <input type="text" placeholder="名字" />
+            <p class="msg"></p>
+        </div>
+
+        <div>
+            书本种类: <input type="text" placeholder="种类" />
+            <p class="msg"></p>
+        </div>
+
+        <div>
+            书本价格: <input type="text" placeholder="价格" />
+            <p class="msg"></p>
+            <button id="add">提交</button>
+        </div>
+
+
+    </div>
+    <div class="search">
+        输入商品名称: <input type="text" placeholder="查找商品" id="search" />
+        <button id="search-btn" id="shop-name">查找购物车商品</button>
+
+
+    </div>
+    <div id="show">
+    </div>
+</div>
+
+<script src="take-storage.js"></script>
+<script src="add-storage2.js"></script>
+<script src="check.js"></script>
+<script src="crud.js"></script>
+<script src="search.js"></script>
+<script src="init.js"></script>
+</body>
+</html>

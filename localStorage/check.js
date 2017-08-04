@@ -1,12 +1,12 @@
 /**
  * Created by lyon on 2017/3/29.
  */
-function bookName() {
+function bookName(msg, inputs) {
     inputs[0].onfocus = function () {
         msg[0].innerHTML = "<p>输入书本名字</p>"
         inputs[0].style.color = "red";
         inputs[0].style.borderColor = "red";
-    }
+    };
     inputs[0].onblur = function () {
         inputs[0].value = inputs[0].value.trim();
         var value = inputs[0].value;
@@ -16,6 +16,7 @@ function bookName() {
             inputs[0].style.borderColor = "red";
         } else {
             var books = JSON.parse(localStorage.getItem("books")); // json字符串
+            // var books = takeStorage("books");
             if(books === null) {
                 alert("onenoen");
             } else {
@@ -37,7 +38,7 @@ function bookName() {
         }
     }
 }
-function price() {
+function price(msg, inputs) {
     inputs[2].onfocus = function () {
         msg[2].innerHTML = "<p>请输入1-1000之间的数字</p>";
         inputs[2].style.color = "red";

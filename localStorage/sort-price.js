@@ -4,7 +4,9 @@
 function sortPrice() {
     var sortUpBtn = document.getElementById("sort-up-btn");
     var sortDownBtn = document.getElementById("sort-down-btn");
-    var books = JSON.parse(localStorage.getItem("books"));
+    // var books = JSON.parse(localStorage.getItem("books"));
+    var books = takeStorage("books");
+    // console.log("books: " + books);
     sortUpBtn.addEventListener("click", function () {
         books.sort(function (x, y) {
             x = x["price"];

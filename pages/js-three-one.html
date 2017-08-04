@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js 学习</title>
+</head>
+<body>
+    <h2>getAttribute: </h2>
+    <p>获取属性值。返回指定元素上的属性值，属性不存在，返回null或 ""(空字符串)。</p>
+
+    <pre>
+        <a href="/jsref/dom_obj_attributes.asp" target="_blank">Attr 对象</a>
+
+        document.getElementByTagName("a")[0].getAttribute("target");
+    </pre>
+    <p>所有主流浏览器都支持getAttribute() 方法</p>
+
+    <h2>setAttribute: </h2>
+    <p>element.setAttribute(name, value)。</p>
+    <p>设置指定元素上的一个属性值。</p>
+    <p>如果属性已经存在，则更新值。否则为元素添加指定的属性和值。</p>
+    <p>删除属性: removeAttribute。</p>
+
+    <pre>
+        <a href="/jsref/dom_obj_attributes.asp">Attr 对象</a>
+
+        document.getElementByTagName("a")[0].setAttribute("target", "_blank");
+    </pre>
+    <p>无返回值。</p>
+
+    <p>网页放入网上，可以被观看，需要服务器，域名</p>
+    <p>免费的在线发布网站，github, Dropbox。</p>
+    <p>git使用</p>
+
+
+    <h2>javascript字面量</h2>
+    <p>在javascript中,通过实例化来创建对象，也可以用对象字面量直接创建对象。</p>
+    <p>在编程语言中，字面量是一种表示值的记法。比如 值是15，值是唯一的，表达方式却多种：例如用阿拉伯数字写出来：15，用中文写出来：十五，用英文表达：fifteen，用16进制：0xF。</p>
+    <p>在javascript中，字面量包括：字符串字面量(string literal )、数组字面量(array literal)和对象字面量(object literal)，另外还有函数字面量(function literal)。</p>
+
+
+    <p>1. 字符串字面量: </p>
+    <pre>
+        var a = "hello world";
+    </pre>
+    <p>"hello world"是字符串字面量， a 是变量名。</p>
+
+    <p>2. 数组字面量(array literal)</p>
+    <pre>
+        var b = ["hello", "world"];
+    </pre>
+    <p>["hello", "world"]是数组字面量， b是变量名。</p>
+
+    <p>3.对象字面量(object literal)</p>
+    <pre>var person={ name:"tom",age:"26",sex:"male" };</pre>
+    <p>{name:"tom",age:"26",sex:"male"}为对象字面量， person为变量名。</p>
+
+
+
+    <h2>变量提升</h2>
+    <p>调用函数时，生成执行环境。过程中分为编译阶段和执行阶段。变量提升就是发生在编译阶段</p>
+    <p>编译阶段：1. 生成变量对象 2. 建立作用域链 3. 确定this指向</p>
+    <p>生成变量对象: 1. 创建arguments对象， 2. 检查function 函数声明创建属性， 3. 检查var声明创建属性</p>
+    <p>因为函数调用有这个过程,所以调用函数时，会有变量提升。</p>
+
+
+    <h2>event.target</h2>
+    <p>event.target指向触发事件的目标对象。</p>
+    <h2>event.currentTarget</h2>
+    <p>event.currentTarget 指向注册监听事件的元素</p>
+
+</body>
+</html>

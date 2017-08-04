@@ -5,7 +5,8 @@ function searchPrice() {
     var prices = document.getElementsByClassName("search-price");
     var priceMsg = document.getElementById("price-msg");
     var btn = document.getElementsByClassName("search-price-btn")[0];
-    var books = JSON.parse(localStorage.getItem("books")); //就是books
+    // var books = JSON.parse(localStorage.getItem("books")); //就是books
+    var books = addStorage("books");
     btn.addEventListener("click", function () {
         var value1 = prices[0].value = prices[0].value.trim();
         var value2 = prices[1].value = prices[1].value.trim();

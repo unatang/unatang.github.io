@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="">
+    <title>字面量</title>
+    <link href="../../static/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../static/css/normalize.css" rel="stylesheet" />
+</head>
+<body>
+@@include('header-nav.html')
+
+<div class="container">
+    <div class="row post-container">
+        <div class="col-sm-9">
+            <div class="post-main">
+                <article>
+                    <h2>字面量: </h2>
+                    <div>
+                        在编程语言中，字面量是一种表示值的记法。比如 值是15，
+                        值是唯一的，表达方式却多种：例如用阿拉伯数字写出来：15，
+                        用中文写出来：十五，用英文表达：fifteen，用16进制：0xF。
+                    </div>
+                    <div>
+                        在javascript中,通过实例化来创建对象，也可以用对象字面量直
+                        接创建对象。
+                    </div>
+                    <div>
+                        在javascript中，字面量包括：字符串字面量(string literal )、
+                        数组字面量(array literal)和对象字面量(object literal)，另外
+                        还有函数字面量(function literal)。
+                    </div>
+
+                    <h3>1. 字符串字面量: </h3>
+                    <pre>
+                        var a = "hello world";
+                    </pre>
+                    <p>"hello world"是字符串字面量， a 是变量名。</p>
+
+                    <h3>2. 数组字面量(array literal)</h3>
+                    <pre>
+                        var b = ["hello", "world"];
+                    </pre>
+                    <p>["hello", "world"]是数组字面量， b是变量名。</p>
+
+                    <h3>3.对象字面量(object literal)</h3>
+                    <pre>
+                        var person={ name:"tom",age:"26",sex:"male" };
+                    </pre>
+                    <p>{name:"tom",age:"26",sex:"male"}为对象字面量， person为变量名。</p>
+
+                </article>
+            </div>
+        </div>
+        @@include('content-main.html')
+    </div>
+</div>
+
+@@include('footer.html')
+
+<script src="../../static/js/jquery.min.js"></script>
+<script src="../../static/js/bootstrap.min.js"></script>
+</body>
+</html>
