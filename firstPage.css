@@ -34,6 +34,11 @@ h1, h2, h3, h4, h5, h6 {
 .carousel-caption h3, p{
     font-weight: bold;
 }
+.carousel-inner>.item>a>img {
+    display: block;
+    width: 1200px;
+    height: auto;
+}
 /*  页面左边 blog-post */
 .blog-post {
     /*background-color: #eee;*/
