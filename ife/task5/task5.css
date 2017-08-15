@@ -6,23 +6,17 @@ body {
     background-color: #eee;
     font-family: "微软雅黑", Arial, Helvetica, sans-serif;
 }
-.main {
-
-    position: relative;
-}
 .center{
     margin: 20px;
 }
 .left {
+    height: 100%;
     margin-right: 425px;
-}
-.right {
-    float: right;
-    width: 400px;
 }
 img {
     width: 260px;
     height: 200px;
+    max-width: 100%;
 }
 header, footer {
     font-size: 14px;
@@ -52,8 +46,36 @@ header nav li a:hover {
     border-bottom: 3px solid red;
     color: #808080;
 }
-header nav li:last-child a {
-    color: #ccc;
+.center {
+    position: relative;
+}
+/* right */
+.right {
+    float: right;
+    width: 400px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+.table tbody {
+    /*display: table-row-group;*/
+    /*vertical-align: middle;*/
+    /*border-color: inherit;*/
+}
+/* 固定宽度 没有写完 */
+.table tr {
+    /*display: table-row;*/
+    /*vertical-align: inherit;*/
+    /*border-color: inherit;*/
+}
+.table tr td {
+    /*margin-bottom: 10px;*/
+}
+.table .t1 {
+    /*float: left;*/
+}
+.table tr1 {
+    /*float: right;*/
 }
 header img {
     width: 90px;
@@ -73,13 +95,14 @@ article {
 .three img {
     width: 120px;
     height: 80px;
-    padding: 10px;
 }
 .three figure{
     border: 1px solid #626262;
     margin-top: 20px;
     margin-left: 10px;
     display: inline-block;
+    max-width: 100%;
+    padding: 10px;
 }
 .three figcaption{
     text-align: center;
@@ -168,4 +191,19 @@ footer {
 footer p{
     line-height: 60px;
     height: 60px;
+}
+.df {
+    width: 200px;
+    height: 500px;
+    border: 2px solid red;
+    float: left;
+}
+.sdf {
+    margin-left: 220px;
+    height: 100%;
+    border: 2px solid red;
+
+}
+.sdf img {
+    max-width: 100%;
 }

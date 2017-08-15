@@ -69,5 +69,115 @@
     <h2>event.currentTarget</h2>
     <p>event.currentTarget 指向注册监听事件的元素</p>
 
+    <h2>this</h2>
+    <p>this与谁有关系</p>
+    <p>this: 动态作用域</p>
+    <p>this绑定与函数被调用的地方有关。函数调用又有不同的方式，在不同方式中，this引用有不同规则</p>
+    <h4>默认绑定全局</h4>
+    <figure>
+        <code>
+            <pre>function fn() {
+                console.log( this.a );
+                }
+                var a = 2;
+                fn(); // 2 -- fn单独调用，this引用window
+            </pre>
+        </code>
+    </figure>
+    <p>fn()调用时，没有对象调用，默认就是全局。</p>
+
+    <h4></h4>
+    <figure>
+        <code>
+            <pre>function fn() {
+                    console.log( this.a );
+                }
+                var obj = {
+                    a: 2,
+                    fn: fn
+                };
+                obj.fn(); // 2 -- this引用obj。
+            </pre>
+        </code>
+    </figure>
+    <p>调用fn()时，this指向obj对象。所以a = 2 。</p>
+    <figure>
+        <code>
+            <pre>function fn() {
+                    console.log( this.a );
+                }
+                var obj2 = {
+                    a: 42,
+                    fn: fn
+                };
+                var obj1 = {
+                    a: 2,
+                    obj2: obj2
+                };
+                obj1.obj2.fn(); // 42 -- this引用的是obj2.
+            </pre>
+        </code>
+    </figure>
+    <p>调用fn()时, this指向obj1.obj2, 所以a = 42</p>
+    <figure>
+        <code>
+            <pre>function fn() {
+                    console.log( this.a );
+                }
+                var obj = {
+                    a: 2,
+                    fn: fn
+                };
+                var bar = obj.fn; // 函数引用传递
+                var a = "全局"; // 定义全局变量
+                bar(); // "全局"
+            </pre>
+        </code>
+    </figure>
+    <p>obj.fn传递给变量bar，调用bar()时，this指向bar 全局作用域。所以a = "全局"</p>
+    <h4>apply, call</h4>
+    <figure>
+        <code>
+            <pre>function fn() {
+                    console.log( this.a );
+                }
+                var obj = {
+                    a: 2
+                };
+                fn.call( obj ); // 2
+            </pre>
+        </code>
+    </figure>
+    <p>call, apply, 它们第一个参数是指定this指向的。fn的this指向obj。所以a = 2 。</p>
+    <figure>
+        <code>
+            <pre>function fn() {
+                    console.log( this.a );
+                }
+                var obj = {
+                    a: 2
+                };
+                fn.call( null ); // 2
+            </pre>
+        </code>
+    </figure>
+    <p>如果call, apply第一个参数是null，则默认this指向全局作用域 。</p>
+    <h4>new对象，this指向新创建的实例</h4>
+    <figure>
+        <code>
+            <pre>function Person(a) {
+                    this.a = a;
+                }
+                var bar = new Person( 2 );
+                console.log( bar.a );// 2
+            </pre>
+        </code>
+    </figure>
+    <p>创建实例，this指向新创建的对象bar。</p>
+
+    <h4>结束语: </h4>
+    <p>this的绑定与函数被调用的位置有关，this是动态作用域。
+        this调用时前面有对象，this则指向那个对象，
+        没有就默认全局对象。创建实例时，this指向那个实例。</p>
 </body>
 </html>
